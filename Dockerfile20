@@ -1,0 +1,37 @@
+# Adapted from 
+FROM tamboraorg/crenode:2020.0
+MAINTAINER Michael Kahle <michael.kahle@yahoo.de>
+
+ARG BUILD_YEAR=2020
+ARG BUILD_MONTH=0
+ARG BUILD_TAG=2020.0
+
+#ENV DEBIAN_FRONTEND noninteractive
+#ENV INITRD No
+#ENV LANG en_US.UTF-8
+ENV MICRONAUT_VERSION 12.16.1
+
+LABEL Name="Micronaut for CRE" \
+      CRE=$CRE_VERSION \ 
+      Year=$BUILD_YEAR \
+      Month=$BUILD_MONTH \
+      Version=$MICRONAUT_VERSION \
+      OS="Ubuntu:$UBUNTU_VERSION" \
+      Build_=$BUILD_TAG 
+
+# Install kotlin
+RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk version"
+RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
+
+COPY cre /cre
+
+#https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
+
+RUN mkdir -p /cre && touch /cre/versions.txt && \ 
+    echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt  
+
+WORKDIR "/cre"
+
+ENTRYPOINT ["/cre/micronaut-entrypoint.sh"]
+
+CMD ["shoreman", "/cre/micronaut-procfile"]
