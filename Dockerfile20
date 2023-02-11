@@ -9,7 +9,7 @@ ARG BUILD_TAG=2020.0
 #ENV DEBIAN_FRONTEND noninteractive
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
-ENV MICRONAUT_VERSION 12.16.1
+ENV MICRONAUT_VERSION 3.8.4
 
 LABEL Name="Micronaut for CRE" \
       CRE=$CRE_VERSION \ 
@@ -23,7 +23,7 @@ LABEL Name="Micronaut for CRE" \
 RUN /cre/sdk.sh version
 RUN /cre/sdk.sh install kotlin
 RUN /cre/sdk.sh install gradle
-RUN /cre/sdk.sh install micronaut
+RUN /cre/sdk.sh install micronaut 3.5.5
 ##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
 
 RUN ls -l /cre
