@@ -22,6 +22,8 @@ LABEL Name="Micronaut for CRE" \
 # Install kotlin
 RUN /cre/sdk.sh version
 RUN /cre/sdk.sh install kotlin
+RUN /cre/sdk.sh install gradle
+RUN /cre/sdk.sh install micronaut
 ##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
 
 
@@ -30,7 +32,9 @@ COPY cre /cre
 #https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
-    echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt  
+    echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
+    echo "$(date +'%F %R') \t  $(mn --version)" >> /cre/versions.txt
+ 
 
 WORKDIR "/cre"
 
