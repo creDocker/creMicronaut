@@ -10,7 +10,7 @@ ARG BUILD_TAG=2018.0
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
 ENV MICRONAUT_VERSION 3.5.5
-ENV KOTLIN_VERSION 1.5.31
+ENV KOTLIN_VERSION 1.4.10
 ENV GRADLE_VERSION 7.6
 
 LABEL Name="Micronaut for CRE" \
@@ -28,11 +28,13 @@ RUN /cre/sdk.sh list micronaut
 # Install kotlin
 RUN /cre/sdk.sh version
 ## RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
-RUN /cre/sdk.sh install gradle
-RUN /cre/sdk.sh install micronaut 
-## RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
-RUN /cre/sdk.sh install kotlin 
+
+## RUN /cre/sdk.sh install micronaut 
+RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
+RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 ##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
+#RUN /cre/sdk.sh install gradle
+
 
 RUN ls -l "$SDKMAN_DIR/candidates/"
 
