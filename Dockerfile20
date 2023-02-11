@@ -30,9 +30,10 @@ RUN ls -l /cre
 RUN ls -l "$SDKMAN_DIR/"
 RUN ls -l "$SDKMAN_DIR/bin/"
 RUN ls -l "$SDKMAN_DIR/candidates/"
-RUN /cre/sdk.sh home kotlin
-RUN /cre/sdk.sh home micronaut
 RUN ls -l "$SDKMAN_DIR/candidates/micronaut/"
+RUN /cre/sdk.sh home kotlin 1.8.0
+#RUN /cre/sdk.sh home micronaut
+
 
 
 COPY cre /cre
