@@ -32,10 +32,10 @@ RUN ls -l "$SDKMAN_DIR/bin/"
 RUN ls -l "$SDKMAN_DIR/candidates/"
 RUN ls -l "$SDKMAN_DIR/candidates/micronaut/"
 RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/"
+RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
 RUN /cre/sdk.sh home kotlin 1.8.0
 RUN /cre/sdk.sh home kotlin current
-#RUN /cre/sdk.sh home micronaut
-
+RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 
 
 COPY cre /cre
