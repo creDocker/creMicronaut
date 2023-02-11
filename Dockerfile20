@@ -31,7 +31,9 @@ RUN ls -l "$SDKMAN_DIR/"
 RUN ls -l "$SDKMAN_DIR/bin/"
 RUN ls -l "$SDKMAN_DIR/candidates/"
 RUN ls -l "$SDKMAN_DIR/candidates/micronaut/"
+RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/"
 RUN /cre/sdk.sh home kotlin 1.8.0
+RUN /cre/sdk.sh home kotlin current
 #RUN /cre/sdk.sh home micronaut
 
 
