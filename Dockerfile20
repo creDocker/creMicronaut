@@ -20,8 +20,10 @@ LABEL Name="Micronaut for CRE" \
       Build_=$BUILD_TAG 
 
 # Install kotlin
-RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk version"
-RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
+RUN /cre/sdk.sh version
+RUN /cre/sdk.sh install kotlin
+##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
+
 
 COPY cre /cre
 
