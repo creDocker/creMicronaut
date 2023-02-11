@@ -27,10 +27,11 @@ RUN /cre/sdk.sh list micronaut
 
 # Install kotlin
 RUN /cre/sdk.sh version
-RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
+## RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 RUN /cre/sdk.sh install gradle
-#RUN /cre/sdk.sh install micronaut 
-RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
+RUN /cre/sdk.sh install micronaut 
+## RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
+RUN /cre/sdk.sh install kotlin 
 ##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
 
 RUN ls -l "$SDKMAN_DIR/candidates/"
