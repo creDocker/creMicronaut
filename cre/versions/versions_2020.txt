@@ -9,5 +9,5 @@ creBuild 	 2023.02
   node 	 v14.21.2
   npm 	 6.14.17
   sdk 	 SDKMAN!: cli version: 5.16.0; native extensions: 0.0.23
- creMicronaut 	 3.8.4
-  Micronaut Version: 3.5.5
+ creMicronaut 	 3.5.5
+  
