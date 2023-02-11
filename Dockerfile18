@@ -10,7 +10,7 @@ ARG BUILD_TAG=2018.0
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
 ENV MICRONAUT_VERSION 3.5.5
-ENV KOTLIN_VERSION 1.8.0
+ENV KOTLIN_VERSION 1.6.0
 ENV GRADLE_VERSION 7.6
 
 LABEL Name="Micronaut for CRE" \
@@ -20,6 +20,10 @@ LABEL Name="Micronaut for CRE" \
       Version=$MICRONAUT_VERSION \
       OS="Ubuntu:$UBUNTU_VERSION" \
       Build_=$BUILD_TAG 
+
+RUN /cre/sdk.sh list
+RUN /cre/sdk.sh list kotlin
+RUN /cre/sdk.sh list micronaut
 
 # Install kotlin
 RUN /cre/sdk.sh version
