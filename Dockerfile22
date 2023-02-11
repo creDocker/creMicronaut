@@ -1,15 +1,15 @@
 # Adapted from 
-FROM tamboraorg/crenode:2020.0
+FROM tamboraorg/crenode:2022.0
 MAINTAINER Michael Kahle <michael.kahle@yahoo.de>
 
-ARG BUILD_YEAR=2020
+ARG BUILD_YEAR=2022
 ARG BUILD_MONTH=0
-ARG BUILD_TAG=2020.0
+ARG BUILD_TAG=2022.0
 
 #ENV DEBIAN_FRONTEND noninteractive
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
-ENV MICRONAUT_VERSION 3.5.5
+ENV MICRONAUT_VERSION 3.8.4
 ENV KOTLIN_VERSION 1.8.0
 ENV GRADLE_VERSION 7.6
 
@@ -34,6 +34,7 @@ RUN ls -l "$SDKMAN_DIR/candidates/"
 RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
 RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
 RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
+RUN /cre/sdk.sh home kotlin 1.8.0
 RUN /cre/sdk.sh home kotlin current
 RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 
@@ -44,7 +45,7 @@ COPY cre /cre
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
-    echo "$(date +'%F %R') \t  $(cre/micronaut.sh --version)" >> /cre/versions.txt
+    echo "$(date +'%F %R') \t  $($SDKMAN_DIR/candidates/micronaut/current/bin/mn --version)" >> /cre/versions.txt
  
 
 WORKDIR "/cre"
