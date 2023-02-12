@@ -1,0 +1,65 @@
+# Adapted from 
+FROM tamboraorg/crenode:2016.0
+MAINTAINER Michael Kahle <michael.kahle@yahoo.de>
+
+ARG BUILD_YEAR=2016
+ARG BUILD_MONTH=0
+ARG BUILD_TAG=2016.0
+
+#ENV DEBIAN_FRONTEND noninteractive
+#ENV INITRD No
+#ENV LANG en_US.UTF-8
+ENV MICRONAUT_VERSION 3.0.3
+ENV KOTLIN_VERSION 1.4.10
+ENV GRADLE_VERSION 7.6
+
+LABEL Name="Micronaut for CRE" \
+      CRE=$CRE_VERSION \ 
+      Year=$BUILD_YEAR \
+      Month=$BUILD_MONTH \
+      Version=$MICRONAUT_VERSION \
+      OS="Ubuntu:$UBUNTU_VERSION" \
+      Build_=$BUILD_TAG 
+
+RUN /cre/sdk.sh list
+RUN /cre/sdk.sh list kotlin
+RUN /cre/sdk.sh list micronaut
+
+# Install kotlin
+RUN /cre/sdk.sh version
+## RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
+
+## RUN /cre/sdk.sh install micronaut 
+RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
+RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
+##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
+RUN /cre/sdk.sh install gradle
+
+
+RUN ls -l "$SDKMAN_DIR/candidates/"
+
+RUN /cre/sdk.sh list
+RUN /cre/sdk.sh list kotlin
+RUN /cre/sdk.sh list micronaut
+
+RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
+RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
+RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
+RUN /cre/sdk.sh home kotlin current
+RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
+
+
+COPY cre /cre
+
+#https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
+
+RUN mkdir -p /cre && touch /cre/versions.txt && \ 
+    echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
+    echo "$(date +'%F %R') \t  $(cre/micronaut.sh --version)" >> /cre/versions.txt
+ 
+
+WORKDIR "/cre"
+
+ENTRYPOINT ["/cre/micronaut-entrypoint.sh"]
+
+CMD ["shoreman", "/cre/micronaut-procfile"]
