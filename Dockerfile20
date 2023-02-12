@@ -48,7 +48,7 @@ COPY cre /cre
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
-    echo "$(date +'%F %R') \t  $(cre/micronaut.sh --version)" >> /cre/versions.txt
+    echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 
 WORKDIR "/cre"
