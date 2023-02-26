@@ -44,6 +44,10 @@ RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 
 COPY cre /cre
 
+RUN cd /cre/mn-app && /cre/micronaut.sh create-app hello-world --build maven && ls -l
+## ./mvnw mn:run
+## ./gradlew run
+
 #https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
