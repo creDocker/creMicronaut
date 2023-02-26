@@ -27,25 +27,23 @@ RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 RUN /cre/sdk.sh install gradle
 #RUN /cre/sdk.sh install micronaut 
 RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
-##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
 
-RUN ls -l "$SDKMAN_DIR/candidates/"
+# RUN ls -l "$SDKMAN_DIR/candidates/"
+# RUN /cre/sdk.sh list
+# RUN /cre/sdk.sh list kotlin
+# RUN /cre/sdk.sh list micronaut
 
-RUN /cre/sdk.sh list
-RUN /cre/sdk.sh list kotlin
-RUN /cre/sdk.sh list micronaut
-
-RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
-RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
-RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
-RUN /cre/sdk.sh home kotlin current
-RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
+# RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
+# RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
+# RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
+# RUN /cre/sdk.sh home kotlin current
+# RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 
 
 COPY cre /cre
 WORKDIR "/cre"
 
-RUN cd /cre/mn-apps && /cre/micronaut.sh create-app mn-init --build maven && ls -l /cre/mn-apps/mn-init
+## RUN cd /cre/mn-apps && /cre/micronaut.sh create-app mn-init --build maven && ls -l /cre/mn-apps/mn-init
 ## ./mvnw mn:run
 ## ./gradlew run
 
