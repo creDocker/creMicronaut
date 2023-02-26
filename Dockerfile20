@@ -43,8 +43,9 @@ RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 
 
 COPY cre /cre
+WORKDIR "/cre"
 
-RUN cd /cre/mn-app && /cre/micronaut.sh create-app hello-world --build maven && ls -l
+RUN /cre/micronaut.sh create-app mn-app --build maven && ls -l /cre/mn-app
 ## ./mvnw mn:run
 ## ./gradlew run
 
@@ -55,7 +56,7 @@ RUN mkdir -p /cre && touch /cre/versions.txt && \
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 
-WORKDIR "/cre"
+
 
 ENTRYPOINT ["/cre/micronaut-entrypoint.sh"]
 
