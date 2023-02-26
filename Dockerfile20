@@ -54,7 +54,7 @@ RUN mkdir -p /cre && touch /cre/versions.txt && \
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 
-
+EXPOSE 8080 
 
 ENTRYPOINT ["/cre/micronaut-entrypoint.sh"]
 
