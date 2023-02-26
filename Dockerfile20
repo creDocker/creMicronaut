@@ -45,7 +45,7 @@ RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 COPY cre /cre
 WORKDIR "/cre"
 
-RUN /cre/micronaut.sh create-app mn-app --build maven && ls -l /cre/mn-app
+RUN cd /cre/mn-apps && /cre/micronaut.sh create-app mn-init --build maven && ls -l /cre/mn-apps/mn-init
 ## ./mvnw mn:run
 ## ./gradlew run
 
