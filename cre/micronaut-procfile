@@ -1,2 +1,3 @@
 start: /cre/run.sh
 init: /cre/mn-init.sh
+run: /cre/mn-run.sh
