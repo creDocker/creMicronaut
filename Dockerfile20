@@ -11,7 +11,9 @@ ARG BUILD_TAG=2020.0
 #ENV LANG en_US.UTF-8
 ENV MICRONAUT_VERSION 3.5.5
 ENV KOTLIN_VERSION 1.8.0
+ENV BUILD_SYSTEM maven
 ENV GRADLE_VERSION 7.6
+ENV MAVEN_VERSION 3.9.0
 
 LABEL Name="Micronaut for CRE" \
       CRE=$CRE_VERSION \ 
@@ -25,6 +27,7 @@ LABEL Name="Micronaut for CRE" \
 RUN /cre/sdk.sh version
 RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 RUN /cre/sdk.sh install gradle
+RUN /cre/sdk.sh install maven
 #RUN /cre/sdk.sh install micronaut 
 RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 

@@ -7,8 +7,11 @@ cd /cre/mn-apps
 ## --build=gradle|maven
 ## --lang=java|kotlin
 
-/cre/micronaut.sh create-app mn-init --build maven --lang=kotlin
-##/cre/micronaut.sh create-app domain.mn-init  -> domain = namespace
+#for now cleanup dir first
+rm -Rf /cre/mn-apps/mn-init
+
+/cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin
+##/cre/micronaut.sh create-app domain.www.mn-init  -> domain.subdomain = namespace;  xx-yy => subdirs??
 
 ls -l /cre/mn-apps/mn-init
 
