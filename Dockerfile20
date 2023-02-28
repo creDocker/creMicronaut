@@ -9,6 +9,7 @@ ARG BUILD_TAG=2020.0
 #ENV DEBIAN_FRONTEND noninteractive
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
+ENV JAVA_VERSION 11.0.12-open
 ENV MICRONAUT_VERSION 3.5.5
 ENV KOTLIN_VERSION 1.8.0
 ENV BUILD_SYSTEM maven
@@ -28,8 +29,8 @@ RUN /cre/sdk.sh version
 
 #17.0.6-tem  WORKS
 #19.0.2-open WORKS
-#11.0.12-open
-RUN /cre/sdk.sh install java 11.0.12-open
+#11.0.12-open WORKS
+RUN /cre/sdk.sh install java $JAVA_VERSION
 # RUN /cre/sdk.sh install java
 ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 
