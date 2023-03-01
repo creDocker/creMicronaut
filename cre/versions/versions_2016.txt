@@ -9,5 +9,7 @@ creBuild 	 2023.03
   node 	 v12.22.12
   npm 	 6.14.16
   sdk 	 [1;33m5.17.0[0m
- creMicronaut 	 3.0.3
-  Micronaut Version: 3.0.3
+ creMicronaut 	 1.0.5
+  Resolving dependencies..
+| Micronaut Version: 1.0.5
+| JVM Version: 1.8.0_302
