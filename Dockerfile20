@@ -65,7 +65,7 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 COPY cre /cre
 WORKDIR "/cre"
 
-/cre/micronaut.sh create-app --list-features
+## /cre/micronaut.sh create-app --list-features
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
