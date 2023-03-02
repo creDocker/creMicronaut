@@ -38,6 +38,8 @@ RUN /cre/sdk.sh version
 # sudo docker exec cremn /cre/sdk.sh list java | grep "$JAVA_VERSION\..*-open" | head -n 1 | cut --delimiter=\| --fields=6
 ENV SDK_JAVA $(/cre/sdk.sh list java | grep " 11\..*-open" | head -n 1 | cut --delimiter=\| --fields=6 |sed 's/ *//g')
 
+RUN /cre/sdk-java.sh 'open'
+
 RUN /cre/sdk.sh install java $JAVA_VERSION
 # RUN /cre/sdk.sh install java
 ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
@@ -62,6 +64,8 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 
 COPY cre /cre
 WORKDIR "/cre"
+
+/cre/micronaut.sh create-app --list-features
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
