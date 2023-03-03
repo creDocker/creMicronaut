@@ -53,6 +53,8 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 COPY cre /cre
 WORKDIR "/cre"
 
+RUN ls -l /cre/mn-apps
+
 ## /cre/micronaut.sh create-app --list-features
 # serialization-jsonp 
 # liquibase postgres
@@ -69,6 +71,8 @@ WORKDIR "/cre"
 RUN cd /cre/mn-apps && /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin && cd /cre/mn-apps/mn-init && ./mvnw package
 ## ./mvnw mn:run
 ## ./gradlew run
+
+RUN ls -l /cre/mn-apps
 
 #https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
 
