@@ -16,5 +16,11 @@ rm -Rf /cre/mn-apps/mn-init
 /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin
 ##/cre/micronaut.sh create-app domain.www.mn-init  -> domain.subdomain = namespace;  xx-yy => subdirs??
 
-ls -l /cre/mn-apps/mn-init
+
+cp /home/kmicha/code/creDocker/creMicronaut/cre/mn-apps/hello-kotlin/HelloController.kt /home/kmicha/code/tambora/compose/volumes/spring/mn-init/src/main/kotlin/mn/init
+cp /home/kmicha/code/creDocker/creMicronaut/cre/mn-apps/hello-kotlin/ HelloControllerTest.kt /home/kmicha/code/tambora/compose/volumes/spring/mn-init/src/test/kotlin/mn/init
+
+./mvnw test
+
+##ls -l /cre/mn-apps/mn-init
 

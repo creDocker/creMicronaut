@@ -54,6 +54,15 @@ COPY cre /cre
 WORKDIR "/cre"
 
 ## /cre/micronaut.sh create-app --list-features
+# serialization-jsonp 
+# liquibase postgres
+# kotlin-extension-functions
+# email-javamail  ??
+# rabbitmq
+# (graalvm)
+# Security:
+# rss views-thymeleaf
+
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.

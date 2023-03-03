@@ -1,0 +1,21 @@
+src/main/kotlin/example/micronaut/Application.kt
+src/main/kotlin/example/micronaut/HelloController.kt
+src/test/kotlin/example/micronaut/HelloControllerTest.kt
+
+/home/kmicha/code/tambora/compose/volumes/spring/mn-init/src/test/kotlin/mn/init
+/home/kmicha/code/tambora/compose/volumes/spring/mn-init/src/main/kotlin/mn/init
+
+
+
+RUN
+./mvnw test
+
+
+(./mvnw mn:run)
+
+
+# https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
+./mvnw package -Dpackaging=native-image
+target/mn-native
+
+
