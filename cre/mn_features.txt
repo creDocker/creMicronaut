@@ -6,25 +6,30 @@ Available Features
   graphql                                                 Adds support for GraphQL
   jackson-databind (+)                                    Adds Jackson Databind to a Micronaut Application
   openapi                                                 Adds support for OpenAPI (Swagger)
-  serialization-bson [PREVIEW]                            Adds support using Micronaut Serialization with BSON
-  serialization-jackson [PREVIEW]                         Adds support using Micronaut Serialization with Jackson Core
-  serialization-jsonp [PREVIEW]                           Adds support using Micronaut Serialization with JSON-B and JSON-P
+  serialization-bson                                      Adds support using Micronaut Serialization with BSON
+  serialization-jackson                                   Adds support using Micronaut Serialization with Jackson Core
+  serialization-jsonp                                     Adds support using Micronaut Serialization with JSON-B and JSON-P
   swagger-ui                                              Adds and enables Swagger UI by default
 
   BPM
-  novatec-camunda [COMMUNITY]                             Bringing process automation to Micronaut: Embed the Camunda Platform Workflow Engine
-  novatec-camunda-external-worker [COMMUNITY]             Bringing process automation to Micronaut: Implement Camunda External Workers for the Camunda Platform
-  novatec-zeebe [COMMUNITY]                               Bringing cloud native process automation to Micronaut: Implement Zeebe Workers for Camunda Cloud or a local broker
+  camunda-external-worker [COMMUNITY]                     Bringing process automation to Micronaut: Implement Camunda External Workers for the Camunda Platform
+  camunda-platform7 [COMMUNITY]                           Bringing process automation to Micronaut: Embed the Camunda Platform Workflow Engine
+  camunda-zeebe [COMMUNITY]                               Bringing cloud native process automation to Micronaut: Implement Zeebe Workers for Camunda Cloud or a local broker
 
   CI/CD
+  aws-codebuild-workflow-ci [PREVIEW]                     Adds a AWS CodeBuild build specification to build a Micronaut application
   github-workflow-azure-container-instance [PREVIEW]      Adds a GitHub Actions Workflow to deploy to Azure Container Instance
   github-workflow-azure-container-instance-graalvm [PREVIEW]Adds a GitHub Actions Workflow to deploy a GraalVM native image to Azure Container Instance
+  github-workflow-ci [PREVIEW]                            Adds a GitHub Actions Workflow to build a Micronaut application
   github-workflow-docker-registry [PREVIEW]               Adds a GitHub Actions Workflow to build and push a Docker image to any Docker registry
   github-workflow-google-cloud-run [PREVIEW]              Adds a GitHub Actions Workflow to deploy to Google Cloud Run from Google Container Registry
   github-workflow-google-cloud-run-graalvm [PREVIEW]      Adds a GitHub Actions Workflow to deploy a GraalVM native image to Google Cloud Run from Google Container Registry
   github-workflow-graal-docker-registry [PREVIEW]         Adds a GitHub Actions Workflow to build and push a GraalVM native image to a Docker registry
   github-workflow-oracle-cloud-functions [PREVIEW]        Adds a GitHub Actions Workflow to deploy to Oracle Functions from Oracle Cloud Infrastructure Registry
   github-workflow-oracle-cloud-functions-graalvm [PREVIEW]Adds a GitHub Actions Workflow to deploy a GraalVM native image to Oracle Functions from Oracle Cloud Infrastructure Registry
+  gitlab-workflow-ci [PREVIEW]                            Adds a Gitlab CI Workflow to build a Micronaut application
+  google-cloud-workflow-ci [PREVIEW]                      Adds a Google Cloud Build configuration file to build a Micronaut application
+  oci-devops-build-ci [PREVIEW]                           Adds a Oracle Cloud DevOps Build Workflow to build a Micronaut application
 
   Cache
   cache-caffeine                                          Adds support for caching using Caffeine
@@ -32,7 +37,7 @@ Available Features
   cache-ehcache                                           Adds support for caching using EHCache
   cache-hazelcast                                         Adds support for caching using Hazelcast
   cache-infinispan                                        Adds support for caching using Infinispan
-  microstream-cache [PREVIEW]                             Adds support for using MicroStream as a cache
+  microstream-cache                                       Adds support for using MicroStream as a cache
 
   Client
   coherence-session                                       Adds support for storing HTTP sessions in Coherence
@@ -44,7 +49,9 @@ Available Features
   netflix-ribbon                                          Adds support for client side load balancing using Netflix Ribbon
 
   Cloud
-  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway
+  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway REST API
+  amazon-api-gateway-http                                 This features combines with the CDK to define an API Gateway HTTP API
+  arm                                                     It can be used in combination with 'aws-cdk' and aws-lambda to generate infrastructure for the Lambda CPU architecture
   aws-cdk                                                 Adds Amazon Web Services CDK (Cloud Development Kit) support
   aws-v2-sdk                                              Provides integration with the AWS SDK 2.x
   dekorate-halkyon [PREVIEW]                              Extends Decorate's generated Kubernetes deployment manifests with Halkyon resources using Dekorate Halkyon Support
@@ -57,8 +64,13 @@ Available Features
   knative                                                 Generates a Knative deployment descriptor for deployment to Kubernetes
   kubernetes                                              Generates a k8s deployment descriptor for deployment to Kubernetes
   kubernetes-informer                                     Adds Micronaut Kubernetes Informer support
+  object-storage-aws                                      Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds the AWS implementation
+  object-storage-azure                                    Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds the Azure implementation
+  object-storage-gcp                                      Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds the GCP implementation
+  object-storage-oracle-cloud                             Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds the Oracle Cloud implementation
   oracle-cloud-atp                                        Provides integration with Oracle Cloud Autonomous Database
   oracle-cloud-sdk                                        Provides integration with the Oracle Cloud SDK
+  x86                                                     It can be used in combination with 'aws-cdk' and aws-lambda to generate infrastructure for the Lambda CPU architecture
 
   Configuration
   config4k                                                Define configuration with config4k, a typesafe configuration format for Kotlin based on HOCON
@@ -66,20 +78,23 @@ Available Features
   toml                                                    Creates a TOML configuration file
 
   Database
+  azure-cosmos-db                                         Enables access to Azure Cosmos DB
   cassandra                                               Adds support for Cassandra persistence
   coherence                                               Adds support for using Coherence
   coherence-data                                          Adds support for using Micronaut Data with Coherence
   coherence-grpc-client                                   Adds support for using Coherence as a gRPC client
+  data-hibernate-reactive                                 Adds support for Micronaut Data Hibernate Reactive
   data-jdbc                                               Adds support for Micronaut Data JDBC
   data-jpa                                                Adds support for Micronaut Data Hibernate/JPA
   data-mongodb                                            Adds support for defining synchronous data repositories for MongoDB
-  data-mongodb-async                                      Adds support for defining asynchronous data repositories for MongoDB
-  data-r2dbc [PREVIEW]                                    Micronaut Data support for Reactive Database Connectivity (R2DBC)
+  data-mongodb-reactive                                   Adds support for defining reactive data repositories for MongoDB
+  data-r2dbc                                              Micronaut Data support for Reactive Database Connectivity (R2DBC)
   dynamodb                                                Integrates with Amazon DynamoDB a NoSQL database service
   flyway                                                  Adds support for Flyway database migrations
   h2                                                      Adds the H2 driver and default config
   hibernate-gorm [PREVIEW]                                Adds support for Hibernate using GORM
   hibernate-jpa                                           Adds support for Hibernate/JPA
+  hibernate-reactive-jpa                                  Adds support for Hibernate Reactive/JPA
   jasync-sql                                              Adds support for JAsync asynchronous PostgreSQL and MySQL database drivers
   jdbc-dbcp                                               Configures SQL DataSources using Commons DBCP
   jdbc-hikari                                             Configures SQL DataSources using Hikari Connection Pool
@@ -88,7 +103,7 @@ Available Features
   jooq                                                    Use the jOOQ fluent API for typesafe SQL query construction and execution
   liquibase                                               Adds support for Liquibase database migrations
   mariadb                                                 Adds the MariaDB driver and default config
-  microstream [PREVIEW]                                   Adds support for using MicroStream with Micronaut
+  microstream                                             Adds support for using MicroStream with Micronaut
   mongo-gorm [PREVIEW]                                    Configures GORM for MongoDB for Groovy applications
   mongo-reactive                                          Adds support for the MongoDB Reactive Streams Driver
   mongo-sync                                              Adds support for the MongoDB Synchronous Driver
@@ -115,15 +130,20 @@ Available Features
   gradle-enterprise                                       Adds Gradle Enterprise Gradle plugin which enables integration with Gradle Enterprise and scans.gradle.com
   hamcrest                                                Hamcrest matchers for JUnit
   jrebel                                                  Adds support for class reloading with JRebel (requires separate JRebel installation)
+  junit-params                                            Provides easy parameterization of test methods in JUnit tests.
+  localstack                                              A fully functional local cloud stack to develop and test your cloud and serverless apps offline, integrated via Testcontainers
   lombok                                                  Adds support for Project Lombok
-  microstream-rest [PREVIEW]                              Adds the MicroStream REST API to your Micronaut project for development
+  micronaut-test-rest-assured                             A small Micronaut-Test utility module that helps integrate the REST-assured library
+  microstream-rest                                        Adds the MicroStream REST API to your Micronaut project for development
   mockito                                                 Mockito test mocking framework for JUnit
   openrewrite                                             Adds OpenRewrite plugin and Micronaut upgrade recipe
   springloaded                                            Adds support for class reloading with Spring Loaded
+  test-resources                                          Adds support for managing external resources which are required during development or testing.
 
   Distributed Configuration
   aws-parameter-store                                     Adds support for Distributed Configuration with AWS System Manager Parameter Store
   aws-secrets-manager                                     Adds support for Distributed Configuration with AWS Secrets Manager
+  azure-key-vault                                         Adds support for Distributed Configuration with Azure Key Vault
   coherence-distributed-configuration                     Adds support for Distributed Configuration using Coherence
   config-consul                                           Adds support for Distributed Configuration with Consul
   config-kubernetes                                       Adds support for Distributed Configuration with Kubernetes ConfigMap
@@ -134,6 +154,12 @@ Available Features
   Distributed Tracing
   gcp-cloud-trace                                         Adds support for distributed tracing Google Cloud Trace
   tracing-jaeger                                          Adds support for distributed tracing with Jaeger
+  tracing-opentelemetry-exporter-logging                  Adds the open telemetry exporter depedendency for Logging
+  tracing-opentelemetry-exporter-otlp                     Adds the open telemetry exporter depedendency for OTLP
+  tracing-opentelemetry-gcp                               It adds Micronaut integration with OpenTelemetry and sets Google Cloud Trace as the exporter.
+  tracing-opentelemetry-jaeger                            It adds Micronaut integration with OpenTelemetry and sets Jaeger as the exporter.
+  tracing-opentelemetry-xray                              Adds support for distributed tracing with XRay via Open Telemetry
+  tracing-opentelemetry-zipkin                            It adds Micronaut integration with OpenTelemetry and sets Zipkin as the exporter.
   tracing-zipkin                                          Adds support for distributed tracing with Zipkin
 
   Documentation
@@ -153,6 +179,7 @@ Available Features
   Management
   jmx                                                     Adds support for exposing management endpoints over JMX
   management                                              Adds support for management endpoints
+  micrometer-annotation                                   Adds support for Micrometer annotations (@Timed and @Counted)
   micrometer-appoptics                                    Adds support for Micrometer metrics (w/ AppOptics reporter)
   micrometer-atlas                                        Adds support for Micrometer metrics (w/ Atlas reporter)
   micrometer-azure-monitor                                Adds support for Micrometer metrics (w/ Azure Monitor reporter)
@@ -195,6 +222,7 @@ Available Features
   rabbitmq                                                Adds support for RabbitMQ messaging
 
   Packaging
+  crac [PREVIEW]                                          Allows building an application that supports CRaC (Coordinated Restore at Checkpoint)
   graalvm                                                 Allows Building a GraalVM Native Image
   jib                                                     Build Docker containers using Jib
   micronaut-aot                                           Build time optimizations to provide faster startup times and smaller binaries.
@@ -219,6 +247,7 @@ Available Features
   elasticsearch                                           Adds support for Elasticsearch
 
   Security
+  agorapulse-micronaut-permissions [COMMUNITY]            Micronaut Permissions is a lightweight library to declare object level permissions in Micronaut
   amazon-cognito                                          Applies Micronaut Security OAuth 2.0 and provides configuration. Can be used in combination with 'aws-cdk' to generate a Cognito User Pool with a OAuth 2.0 application.
   security                                                Adds a full featured and customizable security solution
   security-jwt                                            Adds support for JWT (JSON Web Token) based Authentication
