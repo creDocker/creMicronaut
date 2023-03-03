@@ -23,26 +23,30 @@ LABEL Name="Micronaut for CRE" \
       OS="Ubuntu:$UBUNTU_VERSION" \
       Build_=$BUILD_TAG 
 
-# Install kotlin
-RUN /cre/sdk.sh version
 
+#RUN /cre/sdk.sh version
+
+# Install corresponding java family and version
+#RUN /cre/sdk-java.sh $JAVA_FAMILY $JAVA_VERSION
 RUN /cre/sdk-java.sh
 ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 
+# Install kotlin, gradle, maven, micronaut 
+#RUN /cre/sdk.sh install kotlin
 RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 RUN /cre/sdk.sh install gradle
+RUN /cre/sdk.sh install maven
 #RUN /cre/sdk.sh install micronaut 
 RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 ##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
 
-RUN ls -l "$SDKMAN_DIR/candidates/"
-
-RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
-RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
-RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
-RUN /cre/sdk.sh home kotlin 1.8.0
-RUN /cre/sdk.sh home kotlin current
-RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
+# RUN ls -l "$SDKMAN_DIR/candidates/"
+# RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
+# RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
+# RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
+# RUN /cre/sdk.sh home kotlin 1.8.0
+# RUN /cre/sdk.sh home kotlin current
+# RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
 
 
 COPY cre /cre

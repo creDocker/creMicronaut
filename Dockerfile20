@@ -26,7 +26,7 @@ LABEL Name="Micronaut for CRE" \
       Build_=$BUILD_TAG 
 
 # Install kotlin
-RUN /cre/sdk.sh version
+#RUN /cre/sdk.sh version
 
 #17.0.6-tem  WORKS
 #19.0.2-open WORKS
@@ -34,10 +34,13 @@ RUN /cre/sdk.sh version
 #8.0.302-open NOT HERE
 #grl  >= 19
 
-#RUN /cre/sdk-java.sh $JAVA_FAMILY
+# Install corresponding java family and version
+#RUN /cre/sdk-java.sh $JAVA_FAMILY $JAVA_VERSION
 RUN /cre/sdk-java.sh
 ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 
+# Install kotlin, gradle, maven, micronaut
+#RUN /cre/sdk.sh install kotlin
 RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 RUN /cre/sdk.sh install gradle
 RUN /cre/sdk.sh install maven
