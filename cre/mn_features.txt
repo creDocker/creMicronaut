@@ -1,0 +1,272 @@
+Available Features
+(+) denotes the feature is included by default
+  Name                                                    Description
+  ------------------------------------------------------  ---------------
+  API
+  graphql                                                 Adds support for GraphQL
+  jackson-databind (+)                                    Adds Jackson Databind to a Micronaut Application
+  openapi                                                 Adds support for OpenAPI (Swagger)
+  serialization-bson [PREVIEW]                            Adds support using Micronaut Serialization with BSON
+  serialization-jackson [PREVIEW]                         Adds support using Micronaut Serialization with Jackson Core
+  serialization-jsonp [PREVIEW]                           Adds support using Micronaut Serialization with JSON-B and JSON-P
+  swagger-ui                                              Adds and enables Swagger UI by default
+
+  BPM
+  novatec-camunda [COMMUNITY]                             Bringing process automation to Micronaut: Embed the Camunda Platform Workflow Engine
+  novatec-camunda-external-worker [COMMUNITY]             Bringing process automation to Micronaut: Implement Camunda External Workers for the Camunda Platform
+  novatec-zeebe [COMMUNITY]                               Bringing cloud native process automation to Micronaut: Implement Zeebe Workers for Camunda Cloud or a local broker
+
+  CI/CD
+  github-workflow-azure-container-instance [PREVIEW]      Adds a GitHub Actions Workflow to deploy to Azure Container Instance
+  github-workflow-azure-container-instance-graalvm [PREVIEW]Adds a GitHub Actions Workflow to deploy a GraalVM native image to Azure Container Instance
+  github-workflow-docker-registry [PREVIEW]               Adds a GitHub Actions Workflow to build and push a Docker image to any Docker registry
+  github-workflow-google-cloud-run [PREVIEW]              Adds a GitHub Actions Workflow to deploy to Google Cloud Run from Google Container Registry
+  github-workflow-google-cloud-run-graalvm [PREVIEW]      Adds a GitHub Actions Workflow to deploy a GraalVM native image to Google Cloud Run from Google Container Registry
+  github-workflow-graal-docker-registry [PREVIEW]         Adds a GitHub Actions Workflow to build and push a GraalVM native image to a Docker registry
+  github-workflow-oracle-cloud-functions [PREVIEW]        Adds a GitHub Actions Workflow to deploy to Oracle Functions from Oracle Cloud Infrastructure Registry
+  github-workflow-oracle-cloud-functions-graalvm [PREVIEW]Adds a GitHub Actions Workflow to deploy a GraalVM native image to Oracle Functions from Oracle Cloud Infrastructure Registry
+
+  Cache
+  cache-caffeine                                          Adds support for caching using Caffeine
+  cache-coherence                                         Adds support for caching using Coherence
+  cache-ehcache                                           Adds support for caching using EHCache
+  cache-hazelcast                                         Adds support for caching using Hazelcast
+  cache-infinispan                                        Adds support for caching using Infinispan
+  microstream-cache [PREVIEW]                             Adds support for using MicroStream as a cache
+
+  Client
+  coherence-session                                       Adds support for storing HTTP sessions in Coherence
+  http-client (+)                                         Adds support for the Micronaut HTTP client
+  http-session                                            Adds support for HTTP Sessions
+  kubernetes-client                                       Adds official Kubernetes java client with Micronaut support
+  kubernetes-reactor-client                               Adds Official Kubernetes Java Client with Reactor interface
+  kubernetes-rxjava2-client                               Adds Official Kubernetes Java Client with RxJava2 interface
+  netflix-ribbon                                          Adds support for client side load balancing using Netflix Ribbon
+
+  Cloud
+  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway
+  aws-cdk                                                 Adds Amazon Web Services CDK (Cloud Development Kit) support
+  aws-v2-sdk                                              Provides integration with the AWS SDK 2.x
+  dekorate-halkyon [PREVIEW]                              Extends Decorate's generated Kubernetes deployment manifests with Halkyon resources using Dekorate Halkyon Support
+  dekorate-jaeger [PREVIEW]                               Adds to Decorate deployment manifests Jaeger sidecar container
+  dekorate-knative [PREVIEW]                              Generates Knative Kubernetes deployment manifest using Dekorate Knative Support
+  dekorate-kubernetes [PREVIEW]                           Generates Kubernetes deployment manifest using Dekorate Kubernetes Support
+  dekorate-openshift [PREVIEW]                            Generates OpenShift deployment manifest using Dekorate OpenShift Support
+  dekorate-prometheus [PREVIEW]                           Extends Decorate's generated Kubernetes deployment manifests with Prometheus ServiceMonitor resource using Dekorate Prometheus Support.
+  dekorate-servicecatalog [PREVIEW]                       Extends Decorate's generated Kubernetes deployment manifests with Service Catalog resources using Dekorate Service Catalog Support
+  knative                                                 Generates a Knative deployment descriptor for deployment to Kubernetes
+  kubernetes                                              Generates a k8s deployment descriptor for deployment to Kubernetes
+  kubernetes-informer                                     Adds Micronaut Kubernetes Informer support
+  oracle-cloud-atp                                        Provides integration with Oracle Cloud Autonomous Database
+  oracle-cloud-sdk                                        Provides integration with the Oracle Cloud SDK
+
+  Configuration
+  config4k                                                Define configuration with config4k, a typesafe configuration format for Kotlin based on HOCON
+  properties                                              Creates a properties configuration file
+  toml                                                    Creates a TOML configuration file
+
+  Database
+  cassandra                                               Adds support for Cassandra persistence
+  coherence                                               Adds support for using Coherence
+  coherence-data                                          Adds support for using Micronaut Data with Coherence
+  coherence-grpc-client                                   Adds support for using Coherence as a gRPC client
+  data-jdbc                                               Adds support for Micronaut Data JDBC
+  data-jpa                                                Adds support for Micronaut Data Hibernate/JPA
+  data-mongodb                                            Adds support for defining synchronous data repositories for MongoDB
+  data-mongodb-async                                      Adds support for defining asynchronous data repositories for MongoDB
+  data-r2dbc [PREVIEW]                                    Micronaut Data support for Reactive Database Connectivity (R2DBC)
+  dynamodb                                                Integrates with Amazon DynamoDB a NoSQL database service
+  flyway                                                  Adds support for Flyway database migrations
+  h2                                                      Adds the H2 driver and default config
+  hibernate-gorm [PREVIEW]                                Adds support for Hibernate using GORM
+  hibernate-jpa                                           Adds support for Hibernate/JPA
+  jasync-sql                                              Adds support for JAsync asynchronous PostgreSQL and MySQL database drivers
+  jdbc-dbcp                                               Configures SQL DataSources using Commons DBCP
+  jdbc-hikari                                             Configures SQL DataSources using Hikari Connection Pool
+  jdbc-tomcat                                             Configures SQL DataSources using Tomcat Connection Pool
+  jdbc-ucp                                                Configures SQL DataSources using Oracle UCP
+  jooq                                                    Use the jOOQ fluent API for typesafe SQL query construction and execution
+  liquibase                                               Adds support for Liquibase database migrations
+  mariadb                                                 Adds the MariaDB driver and default config
+  microstream [PREVIEW]                                   Adds support for using MicroStream with Micronaut
+  mongo-gorm [PREVIEW]                                    Configures GORM for MongoDB for Groovy applications
+  mongo-reactive                                          Adds support for the MongoDB Reactive Streams Driver
+  mongo-sync                                              Adds support for the MongoDB Synchronous Driver
+  multi-tenancy                                           Adds multitenancy (tenant resolution, tenant propagation) capabilities
+  multi-tenancy-gorm [PREVIEW]                            Integrates Micronaut multitenancy capabilities with GORM multitenancy features
+  mysql                                                   Adds the MySQL driver and default config
+  neo4j-bolt                                              Adds support for the Neo4j Bolt Driver
+  neo4j-gorm [PREVIEW]                                    Configures GORM for Neo4j for Groovy applications
+  oracle                                                  Adds the Oracle driver and default config
+  postgres                                                Adds the PostgresSQL driver and default config
+  r2dbc                                                   R2DBC - Reactive Database Connectivity
+  redis-lettuce                                           Configures the Lettuce driver for Redis
+  sql-jdbi                                                Adds support for persistence with Jdbi
+  sqlserver                                               Adds the SQL Server driver and default config
+  testcontainers                                          Use Testcontainers to run a database or other software in a Docker container for tests
+  vertx-mysql-client                                      Add support for the Vertx Reactive MySQL Client
+  vertx-pg-client                                         Add support for the Vertx Reactive PostgreSQL Client
+
+  Development Tools
+  agorapulse-gru-http [COMMUNITY]                         Gru is HTTP interaction testing framework with out-of-box support for Micronaut
+  agorapulse-micronaut-console [COMMUNITY]                An extension to Micronaut applications and functions which allows executing arbitrary code.
+  assertj                                                 AssertJ fluent assertions framework
+  awaitility                                              Awaitility is a framework for testing asynchronous code
+  gradle-enterprise                                       Adds Gradle Enterprise Gradle plugin which enables integration with Gradle Enterprise and scans.gradle.com
+  hamcrest                                                Hamcrest matchers for JUnit
+  jrebel                                                  Adds support for class reloading with JRebel (requires separate JRebel installation)
+  lombok                                                  Adds support for Project Lombok
+  microstream-rest [PREVIEW]                              Adds the MicroStream REST API to your Micronaut project for development
+  mockito                                                 Mockito test mocking framework for JUnit
+  openrewrite                                             Adds OpenRewrite plugin and Micronaut upgrade recipe
+  springloaded                                            Adds support for class reloading with Spring Loaded
+
+  Distributed Configuration
+  aws-parameter-store                                     Adds support for Distributed Configuration with AWS System Manager Parameter Store
+  aws-secrets-manager                                     Adds support for Distributed Configuration with AWS Secrets Manager
+  coherence-distributed-configuration                     Adds support for Distributed Configuration using Coherence
+  config-consul                                           Adds support for Distributed Configuration with Consul
+  config-kubernetes                                       Adds support for Distributed Configuration with Kubernetes ConfigMap
+  gcp-secrets-manager                                     Adds support for Distributed Configuration with Google Secrets Manager
+  netflix-archaius                                        Adds support for Distributed Configuration with Netflix Archaius
+  oracle-cloud-vault                                      Adds support for Distributed Configuration with Oracle Cloud Vault
+
+  Distributed Tracing
+  gcp-cloud-trace                                         Adds support for distributed tracing Google Cloud Trace
+  tracing-jaeger                                          Adds support for distributed tracing with Jaeger
+  tracing-zipkin                                          Adds support for distributed tracing with Zipkin
+
+  Documentation
+  asciidoctor                                             Adds support for creating Asciidoctor documentation
+
+  Internet of Things
+  aws-alexa                                               Build Alexa Skills with Micronaut
+
+  Languages
+  kotlin-extension-functions                              Convenience functions to make using Micronaut with Kotlin more user-friendly
+
+  Logging
+  log4j2                                                  Adds Log4j 2 Logging
+  logback (+)                                             Adds Logback Logging
+  slf4j-simple                                            Adds SLF4J Simple Logging through simplelogger.properties
+
+  Management
+  jmx                                                     Adds support for exposing management endpoints over JMX
+  management                                              Adds support for management endpoints
+  micrometer-appoptics                                    Adds support for Micrometer metrics (w/ AppOptics reporter)
+  micrometer-atlas                                        Adds support for Micrometer metrics (w/ Atlas reporter)
+  micrometer-azure-monitor                                Adds support for Micrometer metrics (w/ Azure Monitor reporter)
+  micrometer-cloudwatch                                   Adds support for Micrometer metrics (w/ AWS Cloudwatch reporter)
+  micrometer-datadog                                      Adds support for Micrometer metrics (w/ Datadog reporter)
+  micrometer-dynatrace                                    Adds support for Micrometer metrics (w/ Dynatrace reporter)
+  micrometer-elastic                                      Adds support for Micrometer metrics (w/ Elastic reporter)
+  micrometer-ganglia                                      Adds support for Micrometer metrics (w/ Ganglia reporter)
+  micrometer-graphite                                     Adds support for Micrometer metrics (w/ Graphite reporter)
+  micrometer-humio                                        Adds support for Micrometer metrics (w/ Humio reporter)
+  micrometer-influx                                       Adds support for Micrometer metrics (w/ Influx reporter)
+  micrometer-jmx                                          Adds support for Micrometer metrics (w/ JMX reporter)
+  micrometer-kairos                                       Adds support for Micrometer metrics (w/ Kairos reporter)
+  micrometer-new-relic                                    Adds support for Micrometer metrics (w/ New Relic reporter)
+  micrometer-oracle-cloud                                 Adds support for Micrometer metrics (w/ Oracle Cloud reporter)
+  micrometer-prometheus                                   Adds support for Micrometer metrics (w/ Prometheus reporter)
+  micrometer-signalfx                                     Adds support for Micrometer metrics (w/ SignalFx reporter)
+  micrometer-stackdriver                                  Adds support for Micrometer metrics (w/ Stackdriver reporter)
+  micrometer-statsd                                       Adds support for Micrometer metrics (w/ Statsd reporter)
+  micrometer-wavefront                                    Adds support for Micrometer metrics (w/ Wavefront reporter)
+
+  Messaging
+  email-amazon-ses                                        Integration with Amazon Simple Email Service to send transactional emails
+  email-javamail                                          Integration with Javamail to send transactional emails
+  email-mailjet                                           Integration with Mailjet to send transactional emails
+  email-postmark                                          Integration with Postmark to send transactional emails
+  email-sendgrid                                          Integration with SendGrid to send transactional emails
+  email-template                                          Send emails using Templates with Micronaut Views
+  gcp-pubsub                                              Adds support for Google Cloud Pub/Sub real-time messaging service
+  jms-activemq-artemis [PREVIEW]                          Adds support for ActiveMQ Artemis JMS messaging
+  jms-activemq-classic [PREVIEW]                          Adds support for ActiveMQ Classic JMS messaging
+  jms-core [PREVIEW]                                      Adds Micronaut support for JMS
+  jms-oracle-aq [PREVIEW]                                 Adds support for Oracle Advanced Queuing JMS messaging
+  jms-sqs [PREVIEW]                                       Adds support for AWS SQS JMS messaging
+  kafka                                                   Adds support for Kafka messaging
+  kafka-streams                                           Adds support for Kafka Streams
+  mqtt                                                    Adds support for MQTT messaging
+  mqttv3                                                  Adds support for MQTT messaging
+  nats                                                    Adds support for Nats.io messaging
+  rabbitmq                                                Adds support for RabbitMQ messaging
+
+  Packaging
+  graalvm                                                 Allows Building a GraalVM Native Image
+  jib                                                     Build Docker containers using Jib
+  micronaut-aot                                           Build time optimizations to provide faster startup times and smaller binaries.
+  shade (+)                                               Adds the ability to build a Fat/Shaded JAR
+
+  Reactive
+  reactor                                                 Adds Reactive support using Project Reactor
+  rxjava1                                                 Adds Reactive support using RxJava 1
+  rxjava2                                                 Adds Reactive support using RxJava 2
+  rxjava3                                                 Adds Reactive support using RxJava 3
+
+  Resilience
+  netflix-hystrix                                         Adds support for Netflix Hystrix
+
+  SSL
+  acme                                                    Adds support for ACME (Automated Certificate Management Environment)
+
+  Scheduling
+  agorapulse-micronaut-worker [COMMUNITY]                 Micronaut Worker library provides advanced distributed scheduling capabilities for Micronaut
+
+  Search Engine
+  elasticsearch                                           Adds support for Elasticsearch
+
+  Security
+  amazon-cognito                                          Applies Micronaut Security OAuth 2.0 and provides configuration. Can be used in combination with 'aws-cdk' to generate a Cognito User Pool with a OAuth 2.0 application.
+  security                                                Adds a full featured and customizable security solution
+  security-jwt                                            Adds support for JWT (JSON Web Token) based Authentication
+  security-ldap                                           Adds support for authentication with LDAP servers
+  security-oauth2                                         Adds support for authentication with OAuth 2.0 providers
+  security-session                                        Adds support for Session based Authentication
+
+  Server
+  jax-rs                                                  Adds support for using JAX-RS annotations
+  jetty-server                                            Adds support for a Jetty server
+  ktor                                                    Support for using Ktor as the server instead of Micronaut’s native HTTP server
+  netty-server (+)                                        Adds support for a Netty server
+  tomcat-server                                           Adds support for a Tomcat server
+  undertow-server                                         Adds support for an Undertow server
+
+  Serverless
+  aws-lambda                                              Adds support for writing functions to deploy to AWS Lambda
+  aws-lambda-custom-runtime                               Adds support for deploying a Micronaut Function to a Custom AWS Lambda Runtime
+  azure-function                                          Adds support for writing functions to deploy to Microsoft Azure
+  google-cloud-function                                   Adds support for writing functions to deploy to Google Cloud Function
+  oracle-function                                         Adds support for writing functions to deploy to Oracle Cloud Function
+
+  Service Discovery
+  discovery-consul                                        Adds support for Service Discovery with Consul
+  discovery-eureka                                        Adds support for Service Discovery with Eureka
+  discovery-kubernetes                                    Adds support for Service Discovery with Kubernetes
+
+  Spring Framework
+  spring                                                  Adds support for using Spring Framework Annotations
+  spring-boot                                             Adds support for using Spring Boot Annotations
+  spring-data-jdbc                                        Adds support for using Spring Data JDBC Annotations
+  spring-data-jpa                                         Adds support for using Spring Data JPA Annotations
+  spring-web                                              Adds support for using Spring MVC Controller Annotations
+
+  Validation
+  hibernate-validator                                     Adds support for the Hibernate Validator
+  problem-json                                            Produce REST API error responses in application/problem+json format
+
+  View Rendering
+  jackson-xml                                             Adds support for using Jackson XML serialization/deserialization
+  rss                                                     Adds support for generating RSS feeds
+  rss-itunes-podcast                                      Adds support for generating iTunes Podcast RSS feeds
+  views-freemarker                                        Adds support for Server-Side View Rendering using Apache Freemarker
+  views-handlebars                                        Adds support for Server-Side View Rendering using Handlebars
+  views-jte                                               Adds support for Server-Side View Rendering using JTE
+  views-pebble                                            Adds support for Server-Side View Rendering using Pebble
+  views-rocker                                            Adds support for Server-Side View Rendering using Rocker
+  views-soy                                               Adds support for Server-Side View Rendering using Soy (Closure Templates)
+  views-thymeleaf                                         Adds support for Server-Side View Rendering using Thymeleaf
+  views-velocity                                          Adds support for Server-Side View Rendering using Apache Velocity
+

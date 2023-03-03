@@ -40,14 +40,8 @@ RUN /cre/sdk.sh install maven
 RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 ##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
 
-# RUN ls -l "$SDKMAN_DIR/candidates/"
-# RUN ls -l "$SDKMAN_DIR/candidates/micronaut/current/bin"
-# RUN ls -l "$SDKMAN_DIR/candidates/kotlin/current/bin"
-# RUN ls -l "$SDKMAN_DIR/candidates/gradle/current/bin"
-# RUN /cre/sdk.sh home kotlin 1.8.0
-# RUN /cre/sdk.sh home kotlin current
-# RUN ls -l $(/cre/sdk.sh home micronaut current)/bin
-
+# RUN /cre/sdk.sh list kotlin
+# RUN /cre/sdk.sh list micronaut
 
 COPY cre /cre
 
