@@ -8,16 +8,19 @@ cd /cre/mn-apps
 ## --build=gradle|maven
 ## --lang=java|kotlin
 
-#for now cleanup dir first
-rm -Rf /cre/mn-apps/mn-init
+ls -l
 
-/cre/micronaut.sh create-app --list-features
+#for now cleanup dir first
+rm -Rf /cre/mn-apps/mn-init/
+
+## /cre/micronaut.sh create-app --list-features
 
 /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin
 ##/cre/micronaut.sh create-app domain.www.mn-init  -> domain.subdomain = namespace;  xx-yy => subdirs??
 
 
 # copy files for hello world init...
+echo "cp hello"
 cp /cre/mn-apps/hello-kotlin/HelloController.kt /cre/mn-apps/mn-init/src/main/kotlin/mn/init
 cp /cre/mn-apps/hello-kotlin/HelloControllerTest.kt /cre/mn-apps/mn-init/src/test/kotlin/mn/init
 
