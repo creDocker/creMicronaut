@@ -18,8 +18,8 @@ rm -Rf /cre/mn-apps/mn-init
 
 
 # copy files for hello world init...
-cp /home/kmicha/code/creDocker/creMicronaut/cre/mn-apps/hello-kotlin/HelloController.kt /home/kmicha/code/tambora/compose/volumes/spring/mn-init/src/main/kotlin/mn/init
-cp /home/kmicha/code/creDocker/creMicronaut/cre/mn-apps/hello-kotlin/ HelloControllerTest.kt /home/kmicha/code/tambora/compose/volumes/spring/mn-init/src/test/kotlin/mn/init
+cp /cre/mn-apps/hello-kotlin/HelloController.kt /cre/mn-apps/mn-init/src/main/kotlin/mn/init
+cp /cre/mn-apps/hello-kotlin/HelloControllerTest.kt /cre/mn-apps/mn-init/src/test/kotlin/mn/init
 
 cd /cre/mn-apps/mn-init
 ./mvnw test
