@@ -1,4 +1,4 @@
-package example.micronaut
+package mn.init
 
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.HttpClient
