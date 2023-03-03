@@ -8,7 +8,7 @@ cd /cre/mn-apps
 ## --build=gradle|maven
 ## --lang=java|kotlin
 
-ls -l
+##ls -l
 
 #for now cleanup dir first
 rm -Rf /cre/mn-apps/mn-init/
@@ -21,8 +21,8 @@ rm -Rf /cre/mn-apps/mn-init/
 
 # copy files for hello world init...
 echo "cp hello"
-cp /cre/mn-apps/hello-kotlin/HelloController.kt /cre/mn-apps/mn-init/src/main/kotlin/mn/init
-cp /cre/mn-apps/hello-kotlin/HelloControllerTest.kt /cre/mn-apps/mn-init/src/test/kotlin/mn/init
+cp /cre/mn-init/hello-kotlin/HelloController.kt /cre/mn-apps/mn-init/src/main/kotlin/mn/init
+cp /cre/mn-init/hello-kotlin/HelloControllerTest.kt /cre/mn-apps/mn-init/src/test/kotlin/mn/init
 
 cd /cre/mn-apps/mn-init
 ./mvnw test
