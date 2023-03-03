@@ -9,7 +9,8 @@ ARG BUILD_TAG=2016.0
 #ENV DEBIAN_FRONTEND noninteractive
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
-ENV JAVA_VERSION 8.0.302-open
+ENV JAVA_VERSION2 8.0.302-open
+ENV JAVA_FAMILY open
 #ENV MICRONAUT_VERSION 3.0.3
 ENV MICRONAUT_VERSION 2.0.3
 ENV MICRONAUT_SERVER_PORT 8080
@@ -31,8 +32,7 @@ RUN /cre/sdk.sh list micronaut
 # Install kotlin
 RUN /cre/sdk.sh version
 
-RUN /cre/sdk.sh install java $JAVA_VERSION
-# RUN /cre/sdk.sh install java
+RUN /cre/sdk-java.sh
 ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 
 ## RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION

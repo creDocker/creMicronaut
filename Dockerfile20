@@ -10,6 +10,7 @@ ARG BUILD_TAG=2020.0
 #ENV INITRD No
 #ENV LANG en_US.UTF-8
 ENV JAVA_VERSION2 11.0.12-open
+ENV JAVA_FAMILY open
 ENV MICRONAUT_VERSION 3.5.5
 ENV KOTLIN_VERSION 1.8.0
 ENV BUILD_SYSTEM maven
@@ -31,17 +32,10 @@ RUN /cre/sdk.sh version
 #19.0.2-open WORKS
 #11.0.12-open WORKS
 #8.0.302-open NOT HERE
-#20.ea.34-open ??
-#21.ea.8-open ??
+#grl  >= 19
 
-# /cre/sdk.sh list java | grep "8\..*-open" | head -n 1
-# sudo docker exec cremn /cre/sdk.sh list java | grep "$JAVA_VERSION\..*-open" | head -n 1 | cut --delimiter=\| --fields=6
-## ENV SDK_JAVA $(/cre/sdk.sh list java | grep " 11\..*-open" | head -n 1 | cut --delimiter=\| --fields=6 |sed 's/ *//g')
-
-RUN /cre/sdk-java.sh 'open'
-
-RUN /cre/sdk.sh install java $JAVA_VERSION2
-# RUN /cre/sdk.sh install java
+#RUN /cre/sdk-java.sh $JAVA_FAMILY
+RUN /cre/sdk-java.sh
 ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 
 RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
