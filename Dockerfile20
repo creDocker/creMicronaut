@@ -66,10 +66,10 @@ RUN ls -l /cre/mn-apps
 # rss views-thymeleaf
 
 # netflix-hystrix
-# data-jdbc,liquibase,vertx-pg-client,postgres
-# ,serialization-jsonp,kotlin-extension-functions,email-javamail
+# data-jdbc,vertx-pg-client,
 # 
-# rabbitmq,rss,views-thymeleaf,management
+# liquibase,postgres
+# rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,postgres
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
