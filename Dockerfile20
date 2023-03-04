@@ -67,12 +67,13 @@ RUN ls -l /cre/mn-apps
 
 # netflix-hystrix
 
+# data-jdbc,liquibase,vertx-pg-client,postgres,serialization-jsonp,kotlin-extension-functions,email-javamail,rabbitmq,rss,views-thymeleaf,management
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
 RUN cd /cre/mn-apps && \ 
  /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin \
-  --features=data-jdbc,liquibase,vertx-pg-client,postgres,serialization-jsonp,kotlin-extension-functions,email-javamail,rabbitmq,rss,views-thymeleaf,management && \ 
+  --features=rabbitmq && \ 
  cd /cre/mn-apps/mn-init && ./mvnw package
 ## ./mvnw mn:run
 ## ./gradlew run
