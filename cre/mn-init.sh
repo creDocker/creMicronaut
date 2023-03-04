@@ -15,7 +15,8 @@ rm -Rf /cre/mn-apps/mn-init/
 
 ## /cre/micronaut.sh create-app --list-features
 
-/cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin
+/cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin \
+  --features=data-jdbc,liquibase,vertx-pg-client,postgres,serialization-jsonp,kotlin-extension-functions,email-javamail,rabbitmq,rss,views-thymeleaf,management
 ##/cre/micronaut.sh create-app domain.www.mn-init  -> domain.subdomain = namespace;  xx-yy => subdirs??
 
 
