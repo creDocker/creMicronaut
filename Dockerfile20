@@ -69,13 +69,13 @@ RUN ls -l /cre/mn-apps
 # data-jdbc,vertx-pg-client,
 # 
 # liquibase,postgres
-# rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,postgres
+# rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
 RUN cd /cre/mn-apps && \ 
  /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin \
-  --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail && \ 
+  --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,postgres && \ 
  cd /cre/mn-apps/mn-init && ./mvnw package
 ## ./mvnw mn:run
 ## ./gradlew run
