@@ -34,12 +34,12 @@ jobs:
         with:
           file: ./Dockerfile22
           push: true
-          tags: tamboraorg/cremicronaut:check22 
+          tags: credocker/cremicronaut:check22 
 
       -
         name: Test
         run: |
-          docker run tamboraorg/cremicronaut:check22 /cre/micronaut-test.sh   
+          docker run credocker/cremicronaut:check22 /cre/micronaut-test.sh   
 
       -
         name: Build and push
@@ -48,6 +48,6 @@ jobs:
         with:
           file: ./Dockerfile22
           push: true
-          tags: tamboraorg/cremicronaut:2022.0
+          tags: credocker/cremicronaut:2022.0
       
 
