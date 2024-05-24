@@ -1,0 +1,21 @@
+OpenID Connect
+
+https://openid.net/developers/certified/
+https://github.com/mitreid-connect/OpenID-Connect-Java-Spring-Server
+
+https://nat.sakimura.org/2013/07/28/write-openid-connect-server-in-three-simple-steps/
+
+##
+https://andifalk.gitbook.io/openid-connect-workshop/bonus-labs/micronaut-server-app
+
+
+
+##
+https://github.com/beehive-lab/TornadoVM
+
+
+##
+https://piotrminkowski.com/2020/09/21/micronaut-oauth2-and-security-with-keycloak/amp/
+https://guides.micronaut.io/latest/micronaut-oauth2-keycloak-gradle-java.html
+https://stackoverflow.com/questions/62130643/multiple-authenticationprovider-in-micronaut/66549088#66549088
+https://www.keycloak.org/

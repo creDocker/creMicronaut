@@ -1,0 +1,70 @@
+#!/usr/bin/python
+# Current Container Name : {{ $CurrentContainer.Name }}
+
+#pip3 install pyyaml
+import yaml
+import hashlib
+from pathlib import Path
+
+DATA_PATH = Path.cwd()
+print(DATA_PATH)
+configFile = (DATA_PATH / 'mn-apps' / 'mn-init' / 'src' / 'main' / 'resources' /'application.yml')
+
+with open(configFile) as istream:
+    ymldoc = yaml.safe_load(istream)
+
+    ymldoc['micronaut']['application']['comment'] = 'mn-config.py was adapted!'
+
+    #add postgres data
+{{ if $CurrentContainer.Env.POSTGRES_DB }}
+    if('{{ $CurrentContainer.Env.POSTGRES_DB }}' == '{{ $CurrentContainer.Env.POSTGRES_DB }}'): 
+ {{ range $pgsqlServerPWD, $containers := groupByMulti $ "Env.POSTGRES_ROOT_PWD" "," }}
+  {{ range $index, $container := $containers }}
+   {{ $pgSqlPort := or $container.Env.POSTGRES_PORT "5432" }}
+      pgPort = '{{ $pgSqlPort }}'
+   {{ range $containerNetwork := $container.Networks }}
+      pgHost = '{{ $containerNetwork.IP }}'
+      # dbName = '{{ $CurrentContainer.Env.POSTGRES_DB }}';  //todo: handle multiple comma seperated
+    {{ range $dbNameS := split $CurrentContainer.Env.POSTGRES_DB "," }} 
+      dbName = '{{ $dbNameS }}';
+      {{ if $CurrentContainer.Env.POSTGRES_USER }}
+      dbUser = '{{ $CurrentContainer.Env.POSTGRES_USER }}';
+      {{ else }}
+      dbUser = ('U:'+hashlib.md5(dbName))[0:25]; 
+      {{ end }}
+      {{ if $CurrentContainer.Env.POSTGRES_PWD }}
+      dbPassword = '{{ $CurrentContainer.Env.POSTGRES_PWD }}';
+      {{ else }}
+      dbPassword = ('PWD:'+hashlib.md5(dbUser+":"+'{{ sha1 $pgsqlServerPWD }}'))[0,33]; 
+      {{ end }}
+      # https://github.com/rmondejar/micronaut-postgres-example/blob/master/src/main/resources/application.yml
+      ymldoc['datasources']['default']['url'] = 'jdbc:postgresql://'+pgHost+':'+str(pgPort)+'/'+dbName
+      ymldoc['datasources']['default']['driverClassName'] = 'org.postgresql.Driver'
+      ymldoc['datasources']['default']['username'] = dbUser
+      ymldoc['datasources']['default']['password'] = dbPassword
+      ymldoc['datasources']['default']['dialect'] = 'POSTGRES'
+      ymldoc['datasources']['default']['db-type'] = 'postgresql'
+      #ymldoc['datasources']['default']['schema-generate'] = 'CREATE_DROP'
+      #del ymldoc['datasources']['default']['schema-generate']
+      ymldoc['jpa'] = {'default':{'properties':{'hibernate':{'bytecode':{'provider':'None'}, 'hbm2ddl':{'auto':'validate'}}}}}
+      ymldoc['jpa']['default']['properties']['hibernate']['bytecode']['provider'] = 'None'
+      ymldoc['jpa']['default']['properties']['hibernate']['hbm2ddl']['auto'] = 'validate'  #'update'?
+      ymldoc['jpa']['default']['properties']['hibernate']['show_sql'] = 'False'
+
+      #vertx - reactiv - https://vertx.io/docs/vertx-core/kotlin/
+      ymldoc['vertx']['pg']['client']['port'] = pgPort
+      ymldoc['vertx']['pg']['client']['host'] = pgHost
+      ymldoc['vertx']['pg']['client']['database'] = dbName
+      ymldoc['vertx']['pg']['client']['user'] = dbUser
+      ymldoc['vertx']['pg']['client']['password'] = dbPassword
+      #ymldoc['vertx']['pg']['client']['maxSize'] = 5
+    {{ end }}
+   {{ end }}
+  {{ end }} 
+ {{ end }} 
+{{ end }}
+
+with open(configFile, "w") as ostream:
+    yaml.dump(ymldoc, ostream, default_flow_style=False, sort_keys=False)
+
+

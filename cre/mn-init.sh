@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
-# sleep 10000
+sleep 2
 
 # https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 # https://micronaut-projects.github.io/micronaut-starter/latest/guide/#commands
@@ -10,7 +10,7 @@ cd /cre/mn-apps
 
 ##ls -l
 
-#for now cleanup dir first
+#for now cleanup dir firstmn-config
 rm -Rf /cre/mn-apps/mn-init/
 
 ## /cre/micronaut.sh create-app --list-features
@@ -26,6 +26,7 @@ mnFeatures=${mnFeatures},email-javamail
 
 /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin --features=${mnFeatures}
 ##/cre/micronaut.sh create-app domain.www.mn-init  -> domain.subdomain = namespace;  xx-yy => subdirs??
+python3 /cre/mn-config.py
 
 
 # copy files for hello world init...
