@@ -6,7 +6,7 @@ from pathlib import Path
 
 DATA_PATH = Path.cwd()
 print(DATA_PATH)
-configFile = (DATA_PATH / 'mn-apps' / 'mn-init' / 'src' / 'main' / 'resources' /'application.yml')
+configFile = (DATA_PATH / 'mn-init' / 'src' / 'main' / 'resources' /'application.yml')
 
 with open(configFile) as istream:
     ymldoc = yaml.safe_load(istream)
