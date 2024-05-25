@@ -17,7 +17,7 @@ rm -Rf /cre/mn-apps/mn-init/
 #postgres fails, but vertx-pg-client works
 
 mnFeatures=serialization-jsonp,kotlin-extension-functions,rss,views-thymeleaf,management
-mnFeatures=${mnFeatures},data-jdbc,liquibase,vertx-pg-client
+mnFeatures=${mnFeatures},data-jdbc,liquibase,vertx-pg-client,postgres
 mnFeatures=${mnFeatures},rabbitmq
 mnFeatures=${mnFeatures},email-javamail
 
