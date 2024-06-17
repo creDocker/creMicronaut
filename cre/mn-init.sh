@@ -46,7 +46,7 @@ cp /cre/mn-template/hello-kotlin/HelloController.kt /cre/mn-create/app/src/main/
 cp /cre/mn-template/hello-kotlin/HelloControllerTest.kt /cre/mn-create/app/src/test/kotlin/cre/micronaut
 cp /cre/mn-template/hello-kotlin/DbController.kt /cre/mn-create/app/src/main/kotlin/cre/micronaut
 
-cd /cre/mn-create/mn-create
+cd /cre/mn-create/app
 ./mvnw test
 
 
