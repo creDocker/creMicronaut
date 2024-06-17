@@ -53,7 +53,7 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 COPY cre /cre
 WORKDIR "/cre"
 
-RUN ls -l /cre/mn-apps
+RUN ls -l /cre/mn-app
 
 ## /cre/micronaut.sh create-app --list-features
 # serialization-jsonp 
@@ -70,10 +70,10 @@ RUN ls -l /cre/mn-apps
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
-RUN cd /cre/mn-apps && \ 
- /cre/micronaut.sh create-app mn-init --build=maven --lang=kotlin \
+RUN cd /cre/mn-create && \ 
+ /cre/micronaut.sh create-app cre.micronaut.app --build=maven --lang=kotlin \
   --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,data-jdbc,vertx-pg-client && \ 
- cd /cre/mn-apps/mn-init && ./mvnw package
+ cd /cre/mn-create/app && ./mvnw package
 ## ./mvnw mn:run
 ## ./gradlew run
 
