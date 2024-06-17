@@ -51,7 +51,7 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 # RUN /cre/sdk.sh list micronaut
 
 COPY cre /cre
-WORKDIR "/cre"
+WORKDIR "/cre/mn-app"
 
 RUN ls -l /cre/mn-app
 

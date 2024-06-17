@@ -1,4 +1,5 @@
-db: /cre/gen-template.sh /cre/mn-config.py.tmpl 
+db: /cre/gen-template.sh /cre/mn-config.py.tmpl
+pom: /cre/gen-template.sh /cre/pom.py.tmpl 
 start: /cre/run.sh
 init: /cre/mn-init.sh
 run: /cre/mn-run.sh
