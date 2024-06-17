@@ -7,8 +7,8 @@ import hashlib
 from pathlib import Path
 
 DATA_PATH = Path.cwd()
-print(DATA_PATH)  #'/cre/mn-apps'
-configFile = (DATA_PATH / 'mn-init' / 'src' / 'main' / 'resources' /'application.yml')
+print(DATA_PATH)  #'/cre/mn-create'
+configFile = (DATA_PATH / 'app' / 'src' / 'main' / 'resources' /'application.yml')
 
 with open(configFile) as istream:
     ymldoc = yaml.safe_load(istream)
