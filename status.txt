@@ -19,3 +19,6 @@ https://piotrminkowski.com/2020/09/21/micronaut-oauth2-and-security-with-keycloa
 https://guides.micronaut.io/latest/micronaut-oauth2-keycloak-gradle-java.html
 https://stackoverflow.com/questions/62130643/multiple-authenticationprovider-in-micronaut/66549088#66549088
 https://www.keycloak.org/
+
+
+https://medium.com/@pawga777/creating-reactive-services-using-micronaut-on-kotlin-f9d854d9a996
