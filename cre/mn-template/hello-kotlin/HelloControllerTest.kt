@@ -1,4 +1,4 @@
-package mn.init
+package cre.micronaut
 
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.HttpClient

@@ -1,4 +1,4 @@
-package example.micronaut
+package cre.micronaut
 
 import io.micronaut.runtime.Micronaut.run
 fun main(args: Array<String>) {

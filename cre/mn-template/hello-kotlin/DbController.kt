@@ -1,4 +1,4 @@
-package mn.init
+package cre.micronaut
 
 // https://github.com/cw-bhanunadar/Micronaut-playground
 

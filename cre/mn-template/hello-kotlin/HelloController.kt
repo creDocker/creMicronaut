@@ -1,4 +1,4 @@
-package mn.init
+package cre.micronaut
 
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller

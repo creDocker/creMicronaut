@@ -20,6 +20,7 @@ cd /cre/mn-create
 
 mnFeatures=serialization-jsonp,kotlin-extension-functions,rss,views-thymeleaf,management
 mnFeatures=${mnFeatures},data-jdbc,liquibase,vertx-pg-client,postgres
+# security-oauth2,security-jwt
 mnFeatures=${mnFeatures},rabbitmq
 mnFeatures=${mnFeatures},email-javamail
 
@@ -36,6 +37,11 @@ echo "cp template files"
 
 ls -l /cre/mn-create/
 ls -l /cre/mn-create/app/src/main/kotlin/app
+
+# TODO': handle /cre/mn-create/app/pom.xml -> .orig  & use pom.xml.tmpl
+mv /cre/mn-create/app/src/main/kotlin/app/pom.xml /cre/mn-create/app/src/main/kotlin/app/pom.xml.orig
+cp /cre/pom.xm /cre/mn-create/app/src/main/kotlin/app/pom.xml
+
 cp /cre/mn-template/hello-kotlin/HelloController.kt /cre/mn-create/app/src/main/kotlin/app
 cp /cre/mn-template/hello-kotlin/HelloControllerTest.kt /cre/mn-create/app/src/test/kotlin/mn/init
 cp /cre/mn-template/hello-kotlin/DbController.kt /cre/mn-create/app/src/main/kotlin/mn/app
@@ -45,6 +51,9 @@ cd /cre/mn-create/mn-init
 
 
 echo "cp to app dir"
+
+
+
 # TODO: cp some files only once, some always
 cp -R /cre/mn-create/init/src/main/kotlin/init/* /cre/mn-app
 
