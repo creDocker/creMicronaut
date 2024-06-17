@@ -77,7 +77,7 @@ RUN cd /cre/mn-apps && \
 ## ./mvnw mn:run
 ## ./gradlew run
 
-RUN ls -l /cre/mn-apps
+RUN ls -l /cre/mn-app
 
 #https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
 
