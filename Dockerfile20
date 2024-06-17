@@ -70,7 +70,7 @@ RUN ls -l /cre/mn-app
 
 ## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
 ## build once to hopefully download packages.
-RUN cd /cre/mn-create && \ 
+## RUN cd /cre/mn-create && \ 
  /cre/micronaut.sh create-app cre.micronaut.app --build=maven --lang=kotlin \
   --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,data-jdbc,vertx-pg-client && \ 
  cd /cre/mn-create/app && ./mvnw package

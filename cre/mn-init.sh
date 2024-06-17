@@ -36,17 +36,17 @@ python3 /cre/mn-config.py
 echo "cp template files"
 
 ls -l /cre/mn-create/
-ls -l /cre/mn-create/app/src/main/kotlin/app
+ls -l /cre/mn-create/app/src/main/kotlin/cre/micronaut
 
 # TODO': handle /cre/mn-create/app/pom.xml -> .orig  & use pom.xml.tmpl
-mv /cre/mn-create/app/src/main/kotlin/app/pom.xml /cre/mn-create/app/src/main/kotlin/app/pom.xml.orig
-cp /cre/pom.xm /cre/mn-create/app/src/main/kotlin/app/pom.xml
+mv /cre/mn-create/app/src/main/kotlin/cre/micronaut/pom.xml /cre/mn-create/app/src/main/kotlin/cre/micronaut/pom.xml.orig
+cp /cre/pom.xml /cre/mn-create/app/src/main/kotlin/cre/micronaut/pom.xml
 
-cp /cre/mn-template/hello-kotlin/HelloController.kt /cre/mn-create/app/src/main/kotlin/app
-cp /cre/mn-template/hello-kotlin/HelloControllerTest.kt /cre/mn-create/app/src/test/kotlin/mn/init
-cp /cre/mn-template/hello-kotlin/DbController.kt /cre/mn-create/app/src/main/kotlin/mn/app
+cp /cre/mn-template/hello-kotlin/HelloController.kt /cre/mn-create/app/src/main/kotlin/cre/micronaut
+cp /cre/mn-template/hello-kotlin/HelloControllerTest.kt /cre/mn-create/app/src/test/kotlin/cre/micronaut
+cp /cre/mn-template/hello-kotlin/DbController.kt /cre/mn-create/app/src/main/kotlin/cre/micronaut
 
-cd /cre/mn-create/mn-init
+cd /cre/mn-create/mn-create
 ./mvnw test
 
 
@@ -55,7 +55,8 @@ echo "cp to app dir"
 
 
 # TODO: cp some files only once, some always
-cp -R /cre/mn-create/init/src/main/kotlin/init/* /cre/mn-app
+cp -R /cre/mn-create/app/* /cre/mn-app
+chmod -R 777 /cre/mn-app
 
 
 

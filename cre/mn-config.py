@@ -5,6 +5,7 @@ import yaml
 from pathlib import Path
 
 DATA_PATH = Path.cwd()
+print("Inside mn-config.py")
 print(DATA_PATH)
 configFile = (DATA_PATH / 'app' / 'src' / 'main' / 'resources' /'application.yml')
 
