@@ -72,10 +72,12 @@ RUN ls -l /cre/mn-app
 ## build once to hopefully download packages.
 RUN cd /cre/mn-create && \ 
  /cre/micronaut.sh create-app cre.micronaut.app --build=maven --lang=kotlin \
-  --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,data-jdbc,vertx-pg-client && \ 
+  --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,data-jdbc,flyway,jdbc-hikari,vertx-pg-client && \ 
  cd /cre/mn-create/app && ./mvnw package
 ## ./mvnw mn:run
 ## ./gradlew run
+
+RUN rm -R /cre/mn-create/app
 
 RUN ls -l /cre/mn-app
 
