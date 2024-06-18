@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
   <groupId>cre.micronaut</groupId>
   <artifactId>app</artifactId>
   <version>0.1</version>
   <packaging>${packaging}</packaging>
-
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
     <version>3.5.5</version>
   </parent>
-
   <properties>
     <packaging>jar</packaging>
     <jdk.version>11</jdk.version>
@@ -23,20 +20,16 @@
     <micronaut.data.version>3.4.3</micronaut.data.version>
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>example.micronaut.aot.generated</micronaut.aot.packageName>
-    <exec.mainClass>example.micronaut.ApplicationKt</exec.mainClass>
-    <kotlinVersion>1.6.10</kotlinVersion>
+    <exec.mainClass>cre.micronaut.ApplicationKt</exec.mainClass>
+    <kotlinVersion>1.8.0</kotlinVersion>
   </properties>
-
   <repositories>
     <repository>
       <id>central</id>
       <url>https://repo.maven.apache.org/maven2</url>
     </repository>
   </repositories>
-
   <dependencies>
-
-
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject</artifactId>
@@ -47,7 +40,41 @@
       <artifactId>micronaut-validation</artifactId>
       <scope>compile</scope>
     </dependency>
-
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-kotlin</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.test</groupId>
+      <artifactId>micronaut-test-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-client</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-server-netty</artifactId>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-management</artifactId>
@@ -64,24 +91,21 @@
           </exclusion>
         </exclusions>
     </dependency>
-
-    <dependency>
-      <groupId>io.micronaut.data</groupId>
-      <artifactId>micronaut-data-jdbc</artifactId>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
+    <!--dependency>
       <groupId>io.micronaut.liquibase</groupId>
       <artifactId>micronaut-liquibase</artifactId>
       <scope>compile</scope>
-    </dependency>
+    </dependency-->
     <!--dependency>
       <groupId>io.micronaut.rabbitmq</groupId>
       <artifactId>micronaut-rabbitmq</artifactId>
       <scope>compile</scope>
     </dependency-->
-
+    <dependency>
+      <groupId>io.micronaut.data</groupId>
+      <artifactId>micronaut-data-jdbc</artifactId>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>io.micronaut.sql</groupId>
       <artifactId>micronaut-jdbc-hikari</artifactId>
@@ -92,7 +116,6 @@
       <artifactId>micronaut-vertx-pg-client</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>jakarta.annotation</groupId>
       <artifactId>jakarta.annotation-api</artifactId>
@@ -104,14 +127,11 @@
       <version>2.0.0</version>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
-
-
     <dependency>
       <groupId>io.micronaut.email</groupId>
       <artifactId>micronaut-email-javamail</artifactId>
@@ -122,23 +142,11 @@
       <artifactId>micronaut-email-template</artifactId>
       <scope>compile</scope>
     </dependency>
-
-    <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-http-client</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-http-server-netty</artifactId>
-      <scope>compile</scope>
-    </dependency>
     <dependency>
       <groupId>io.micronaut.kotlin</groupId>
       <artifactId>micronaut-kotlin-runtime</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>io.micronaut.security</groupId>
       <artifactId>micronaut-security-jwt</artifactId>
@@ -149,7 +157,6 @@
       <artifactId>micronaut-security-oauth2</artifactId>
       <scope>compile</scope>
     </dependency>
-
   <dependency>
       <groupId>io.micronaut.serde</groupId>
       <artifactId>micronaut-serde-jsonp</artifactId>
@@ -160,23 +167,21 @@
       <artifactId>micronaut-serde-jackson</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
+    <!--dependency>
       <groupId>io.micronaut.views</groupId>
       <artifactId>micronaut-views-fieldset</artifactId>
       <scope>compile</scope>
-    </dependency>
+    </dependency-->
     <dependency>
       <groupId>io.micronaut.views</groupId>
       <artifactId>micronaut-views-thymeleaf</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>io.micronaut.rss</groupId>
       <artifactId>micronaut-rss</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-reflect</artifactId>
@@ -194,63 +199,33 @@
       <artifactId>micronaut-kotlin-extension-functions</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-kotlin</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.yaml</groupId>
       <artifactId>snakeyaml</artifactId>
       <scope>runtime</scope>
     </dependency>
-
-    <dependency>
-      <groupId>io.micronaut.test</groupId>
-      <artifactId>micronaut-test-junit5</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>postgresql</artifactId>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>testcontainers</artifactId>
       <scope>test</scope>
     </dependency>
-
-
   </dependencies>
-
   <build>
     <plugins>
-
+      <plugin>
+        <groupId>io.micronaut.build</groupId>
+        <artifactId>micronaut-maven-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>io.micronaut.maven</groupId>
         <artifactId>micronaut-maven-plugin</artifactId>
@@ -265,7 +240,6 @@
           <configFile>aot-${packaging}.properties</configFile>
         </configuration>
       </plugin>
-
       <!--plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
@@ -278,17 +252,14 @@
           </kotlin>
         </configuration>
       </plugin-->
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
-
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
         <groupId>org.jetbrains.kotlin</groupId>
         <version>${kotlinVersion}</version>
-
         <configuration>
           <jvmTarget>${jdk.version}</jvmTarget>
           <compilerPlugins>
@@ -298,7 +269,6 @@
             <option>all-open:annotation=io.micronaut.aop.Around</option>
           </pluginOptions>
         </configuration>
-
         <executions>
           <execution>
             <id>kapt</id>
@@ -313,7 +283,7 @@
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-inject-java</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut.data</groupId>
@@ -323,12 +293,12 @@
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-graal</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-http-validation</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
@@ -348,11 +318,10 @@
               </annotationProcessorPaths>
               <annotationProcessorArgs>
                 <annotationProcessorArg>micronaut.processing.group=cre.micronaut</annotationProcessorArg>
-                <annotationProcessorArg>micronaut.processing.module=default</annotationProcessorArg>
+                <annotationProcessorArg>micronaut.processing.module=app</annotationProcessorArg>
               </annotationProcessorArgs>
             </configuration>
           </execution>
-
           <execution>
             <id>compile</id>
             <goals>
@@ -364,7 +333,6 @@
               </sourceDirs>
             </configuration>
           </execution>
-
           <execution>
             <id>test-kapt</id>
             <goals>
@@ -378,12 +346,12 @@
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-inject-java</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-graal</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
@@ -393,7 +361,6 @@
               </annotationProcessorPaths>
             </configuration>
           </execution>
-
           <execution>
             <id>test-compile</id>
             <goals>
@@ -406,9 +373,7 @@
               </sourceDirs>
             </configuration>
           </execution>
-
         </executions>
-
         <dependencies>
           <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -417,7 +382,6 @@
           </dependency>
         </dependencies>
       </plugin>
-      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -451,8 +415,6 @@
           </execution>
         </executions>
       </plugin>
-
     </plugins>
   </build>
-
 </project>
