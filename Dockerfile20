@@ -16,7 +16,9 @@ ENV MICRONAUT_DATA_VERSION 3.4.3
 ENV KOTLIN_VERSION 1.8.0
 ENV BUILD_SYSTEM maven
 ENV GRADLE_VERSION 7.6
-ENV MAVEN_VERSION 4.0.0
+ENV POM_VERSION 4.0.0
+ENV MAVEN_VERSION 3.6.3
+# is 4.0.0 / 3.9.0 / 3.6.3 here ?!?
 
 LABEL Name="Micronaut for CRE" \
       CRE=$CRE_VERSION \ 
@@ -88,6 +90,7 @@ RUN ls -l /cre/mn-app
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
+    echo "$(date +'%F %R') \t  $(/cre/mn-app/mvnw --version | grep 'Apache Maven')" >> /cre/versions.txt && \
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 
