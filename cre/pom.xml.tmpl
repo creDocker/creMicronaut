@@ -19,11 +19,11 @@
     <jdk.version>{{ $CurrentContainer.Env.JAVA_VERSION }}</jdk.version>
     <release.version>{{ $CurrentContainer.Env.JAVA_VERSION }}</release.version>
     <micronaut.version>{{ $CurrentContainer.Env.MICRONAUT_VERSION }}</micronaut.version>
-    <micronaut.data.version>3.4.3</micronaut.data.version>
     <micronaut.runtime>netty</micronaut.runtime>
+    <micronaut.data.version>{{ $CurrentContainer.Env.MICRONAUT_DATA_VERSION }}</micronaut.data.version>
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>example.micronaut.aot.generated</micronaut.aot.packageName>
-    <exec.mainClass>example.micronaut.ApplicationKt</exec.mainClass>
+    <exec.mainClass>cre.micronaut.ApplicationKt</exec.mainClass>
     <kotlinVersion>{{ $CurrentContainer.Env.KOTLIN_VERSION }}</kotlinVersion>
   </properties>
 
@@ -381,12 +381,12 @@
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-inject-java</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-graal</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
