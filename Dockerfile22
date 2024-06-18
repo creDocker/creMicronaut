@@ -49,11 +49,41 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 COPY cre /cre
 WORKDIR "/cre/mn-app"
 
+RUN ls -l /cre/mn-app
+
+## /cre/micronaut.sh create-app --list-features
+# serialization-jsonp 
+# liquibase postgres
+# kotlin-extension-functions
+# email-javamail  ??
+# rabbitmq
+# (graalvm)
+# Security:
+# rss views-thymeleaf
+
+# netflix-hystrix
+# postgres fails
+
+## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
+## build once to hopefully download packages.
+# flyway OR liquibase
+RUN cd /cre/mn-create && \ 
+ /cre/micronaut.sh create-app cre.micronaut.app --build=maven --lang=kotlin \
+  --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,liquibase,data-jdbc,jdbc-hikari,vertx-pg-client && \ 
+ cd /cre/mn-create/app && ./mvnw package
+## ./mvnw mn:run
+## ./gradlew run
+
+RUN rm -R /cre/mn-create/app
+
+RUN ls -l /cre/mn-app
+
+
 #https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
-##    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \ 
+    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 EXPOSE 8080 
