@@ -90,7 +90,7 @@ RUN ls -l /cre/mn-app
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
-    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/apache-maven*)" >> /cre/versions.txt && \ 
+    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 

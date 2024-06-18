@@ -51,7 +51,7 @@ COPY cre /cre
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
-    echo "$(date +'%F %R') \t  $(/cre/mn-app/mvnw -B -o --version 2>&1 | grep Apache)" >> /cre/versions.txt && \
+    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
 
