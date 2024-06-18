@@ -39,8 +39,8 @@ ls -l /cre/mn-create/
 ls -l /cre/mn-create/app/src/main/kotlin/cre/micronaut
 
 # TODO': handle /cre/mn-create/app/pom.xml -> .orig  & use pom.xml.tmpl
-mv /cre/mn-create/app/src/main/kotlin/cre/micronaut/pom.xml /cre/mn-create/app/src/main/kotlin/cre/micronaut/pom.xml.orig
-cp /cre/pom.xml /cre/mn-create/app/src/main/kotlin/cre/micronaut/pom.xml
+mv /cre/mn-create/app/pom.xml /cre/mn-create/app/pom.xml.orig
+cp /cre/pom.xml /cre/mn-create/app/pom.xml
 
 cp /cre/mn-template/hello-kotlin/HelloController.kt /cre/mn-create/app/src/main/kotlin/cre/micronaut
 cp /cre/mn-template/hello-kotlin/HelloControllerTest.kt /cre/mn-create/app/src/test/kotlin/cre/micronaut
@@ -59,6 +59,8 @@ echo "cp to app dir"
 
 # TODO: cp some files only once, some always
 cp -R /cre/mn-create/app/* /cre/mn-app
+# copy hidden files/folders as well!
+cp -R /cre/mn-create/app/.* /cre/mn-app
 chmod -R 777 /cre/mn-app
 
 
