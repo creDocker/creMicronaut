@@ -19,8 +19,8 @@
     <jdk.version>{{ $CurrentContainer.Env.JAVA_VERSION }}</jdk.version>
     <release.version>{{ $CurrentContainer.Env.JAVA_VERSION }}</release.version>
     <micronaut.version>{{ $CurrentContainer.Env.MICRONAUT_VERSION }}</micronaut.version>
-    <micronaut.runtime>netty</micronaut.runtime>
     <micronaut.data.version>3.4.3</micronaut.data.version>
+    <micronaut.runtime>netty</micronaut.runtime>
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>example.micronaut.aot.generated</micronaut.aot.packageName>
     <exec.mainClass>example.micronaut.ApplicationKt</exec.mainClass>
@@ -316,7 +316,7 @@
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-inject-java</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut.data</groupId>
@@ -326,12 +326,12 @@
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-graal</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
                  <artifactId>micronaut-http-validation</artifactId>
-                 <version>${micronaut.core.version}</version>
+                 <version>${micronaut.version}</version>
                </annotationProcessorPath>
                <annotationProcessorPath>
                  <groupId>io.micronaut</groupId>
@@ -351,7 +351,7 @@
               </annotationProcessorPaths>
               <annotationProcessorArgs>
                 <annotationProcessorArg>micronaut.processing.group=cre.micronaut</annotationProcessorArg>
-                <annotationProcessorArg>micronaut.processing.module=default</annotationProcessorArg>
+                <annotationProcessorArg>micronaut.processing.module=app</annotationProcessorArg>
               </annotationProcessorArgs>
             </configuration>
           </execution>
