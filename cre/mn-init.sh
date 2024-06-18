@@ -17,9 +17,9 @@ cd /cre/mn-create
 
 ## /cre/micronaut.sh create-app --list-features
 #postgres fails, but vertx-pg-client works
-
+## flyway OR liquibase - not both
 mnFeatures=serialization-jsonp,kotlin-extension-functions,rss,views-thymeleaf,management
-mnFeatures=${mnFeatures},data-jdbc,flyway,jdbc-hikari,liquibase,vertx-pg-client,postgres
+mnFeatures=${mnFeatures},data-jdbc,jdbc-hikari,liquibase,vertx-pg-client,postgres
 # security-oauth2,security-jwt
 ## mnFeatures=${mnFeatures},rabbitmq
 mnFeatures=${mnFeatures},email-javamail
