@@ -13,6 +13,7 @@ ARG BUILD_TAG=2022.0
 ENV MICRONAUT_VERSION 3.8.4
 ENV MICRONAUT_DATA_VERSION 3.4.3
 ENV KOTLIN_VERSION 1.8.0
+ENV BUILD_SYSTEM maven
 ENV GRADLE_VERSION 7.6
 ENV POM_VERSION 4.0.0
 ENV MAVEN_VERSION 3.6.3
@@ -46,16 +47,16 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 # RUN /cre/sdk.sh list micronaut
 
 COPY cre /cre
+WORKDIR "/cre/mn-app"
 
 #https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
-    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \
+##    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
  
-
-WORKDIR "/cre"
+EXPOSE 8080 
 
 ENTRYPOINT ["/cre/micronaut-entrypoint.sh"]
 
