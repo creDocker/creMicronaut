@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/{{ $CurrentContainer.Env.MAVEN_VERSION }}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/{{ $CurrentContainer.Env.MAVEN_VERSION }} http://maven.apache.org/xsd/maven-{{ $CurrentContainer.Env.MAVEN_VERSION }}.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+  <modelVersion>{{ $CurrentContainer.Env.MAVEN_VERSION }}</modelVersion>
   <groupId>cre.micronaut</groupId>
   <artifactId>app</artifactId>
-  <version>0.1</version>
+  <version>{{ $CurrentContainer.Env.CRE_VERSION }}</version>
   <packaging>${packaging}</packaging>
 
   <parent>
