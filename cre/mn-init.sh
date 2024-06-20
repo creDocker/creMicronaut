@@ -20,6 +20,9 @@ cd /cre/mn-create
 ## flyway OR liquibase - not both
 mnFeatures=serialization-jsonp,kotlin-extension-functions,rss,views-thymeleaf,management
 mnFeatures=${mnFeatures},data-jdbc,jdbc-hikari,liquibase,vertx-pg-client,postgres
+
+mnFeatures=${mnFeatures},yaml
+
 # security-oauth2,security-jwt
 ## mnFeatures=${mnFeatures},rabbitmq
 mnFeatures=${mnFeatures},email-javamail
