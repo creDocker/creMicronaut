@@ -39,8 +39,9 @@ ls -l /cre/mn-create/
 ls -l /cre/mn-create/app/src/main/kotlin/cre/micronaut
 
 # TODO': handle /cre/mn-create/app/pom.xml -> .orig  & use pom.xml.tmpl
-mv /cre/mn-create/app/pom.xml /cre/mn-create/app/pom.xml.orig
-cp /cre/pom.xml /cre/mn-create/app/pom.xml
+##mv /cre/mn-create/app/pom.xml /cre/mn-create/app/pom.xml.orig
+##cp /cre/pom.xml /cre/mn-create/app/pom.xml
+cp /cre/pom.xml /cre/mn-create/app/pom.xml.new
 
 cp /cre/mn-template/hello-kotlin/HelloController.kt /cre/mn-create/app/src/main/kotlin/cre/micronaut
 cp /cre/mn-template/hello-kotlin/HelloControllerTest.kt /cre/mn-create/app/src/test/kotlin/cre/micronaut
