@@ -62,7 +62,7 @@ RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
 
 
 RUN /cre/sdk.sh list kotlin
-RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
+##RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 RUN /cre/sdk.sh list kotlin
 
 # RUN /cre/sdk.sh list micronaut
