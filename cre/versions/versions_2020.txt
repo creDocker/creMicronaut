@@ -10,6 +10,6 @@ creBuild 	 2024.06
   node 	 v14.21.3
   npm 	 6.14.18
   sdk 	 5.18.2
- creMicronaut 	 3.5.5
-  apache-maven-3.6.3-bin
-  Micronaut Version: 3.5.5
+ creMicronaut 	 3.10.1
+  apache-maven-3.9.1-bin
+  Micronaut Version: 3.10.1
