@@ -13,7 +13,7 @@ ARG BUILD_TAG=2020.0
 #ENV JAVA_FAMILY open
 ENV MICRONAUT_VERSION 3.5.5
 ENV MICRONAUT_DATA_VERSION 3.4.3
-ENV KOTLIN_VERSION 1.6.1
+ENV KOTLIN_VERSION 1.6.10
 ##ENV KOTLIN_VERSION 1.8.0
 ENV BUILD_SYSTEM maven
 ENV GRADLE_VERSION 7.6
@@ -47,8 +47,8 @@ ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 
 
 RUN /cre/sdk.sh list kotlin
-RUN /cre/sdk.sh install kotlin
-##RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
+##RUN /cre/sdk.sh install kotlin
+RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
 
 
 RUN /cre/sdk.sh install gradle
