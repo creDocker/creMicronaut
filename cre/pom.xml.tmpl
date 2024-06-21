@@ -108,7 +108,7 @@
       <scope>compile</scope>
     </dependency-->
 {{ end }}
-{{ if eq "flyway" $CurrentContainer.Env.DB_MIGRATION }}
+{{ if eq "flyway" $CurrentContainer.Env.DB_MIGRATION }} 
     <dependency>
       <groupId>io.micronaut.flyway</groupId>
       <artifactId>micronaut-flyway</artifactId>
