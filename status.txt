@@ -22,3 +22,11 @@ https://www.keycloak.org/
 
 
 https://medium.com/@pawga777/creating-reactive-services-using-micronaut-on-kotlin-f9d854d9a996
+
+# flyway vs liquidbase
+# flyway: no rollback for free, nicer syntax, 
+# liquidbase: not working due to ??? ...
+
+
+
+

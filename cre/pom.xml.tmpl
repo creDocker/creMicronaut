@@ -101,18 +101,26 @@
           </exclusion>
         </exclusions>
     </dependency>
-
+{{ if 'liquibase' == $CurrentContainer.Env.DB_MIGRATION }}
     <!--dependency>
       <groupId>io.micronaut.liquibase</groupId>
       <artifactId>micronaut-liquibase</artifactId>
       <scope>compile</scope>
     </dependency-->
-
-    <!--dependency>
-      <groupId>io.micronaut.rabbitmq</groupId>
-      <artifactId>micronaut-rabbitmq</artifactId>
+{{ end }}
+{{ if eq 'flyway' $CurrentContainer.Env.DB_MIGRATION }}
+    <dependency>
+      <groupId>io.micronaut.flyway</groupId>
+      <artifactId>micronaut-flyway</artifactId>
       <scope>compile</scope>
-    </dependency-->
+    </dependency>
+{{ if $CurrentContainer.Env.POSTGRES_DB }}
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-database-postgresql</artifactId>
+    </dependency>
+{{ end }}
+{{ end }}
 
 {{ if $CurrentContainer.Env.POSTGRES_DB }}
     <dependency>
@@ -150,6 +158,12 @@
       <scope>runtime</scope>
     </dependency>
 {{ end }}
+
+    <!--dependency>
+      <groupId>io.micronaut.rabbitmq</groupId>
+      <artifactId>micronaut-rabbitmq</artifactId>
+      <scope>compile</scope>
+    </dependency-->
 
     <dependency>
       <groupId>io.micronaut.email</groupId>
