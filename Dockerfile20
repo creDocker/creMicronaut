@@ -48,7 +48,7 @@ ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
 # Install kotlin, gradle, maven, micronaut
 
 
-##RUN /cre/sdk.sh list kotlin
+##RUN /cre/sdk.sh list kotlin 
 ##RUN /cre/sdk.sh install kotlin
 
 
