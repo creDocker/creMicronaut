@@ -3,16 +3,19 @@ Available Features
   Name                                                    Description
   ------------------------------------------------------  ---------------
   API
-  annotation-api                                          Adds Jakarta annotations API dependency. For example, to use @PostConstruct or @PreDestroy
   graphql                                                 Adds support for GraphQL
-  jackson-databind                                        Adds Jackson Databind to a Micronaut Application
+  jackson-databind (+)                                    Adds Jackson Databind to a Micronaut Application
   micronaut-aop                                           Adds support for Micronaut Aspect-Oriented Programming (AOP) API
   openapi                                                 Adds support for OpenAPI (Swagger)
-  retry                                                   Adds support for fallbacks or retries from operation failure.
   serialization-bson                                      Adds support using Micronaut Serialization with BSON
-  serialization-jackson (+)                               Adds support using Micronaut Serialization with Jackson Core
+  serialization-jackson                                   Adds support using Micronaut Serialization with Jackson Core
   serialization-jsonp                                     Adds support using Micronaut Serialization with JSON-B and JSON-P
   swagger-ui                                              Adds and enables Swagger UI by default
+
+  BPM
+  camunda-external-worker [COMMUNITY]                     Bringing process automation to Micronaut: Implement Camunda External Workers for the Camunda Platform 7
+  camunda-platform7 [COMMUNITY]                           Bringing process automation to Micronaut: Embed the Camunda Platform 7 Workflow Engine
+  camunda-zeebe [COMMUNITY]                               Bringing cloud native process automation to Micronaut: Implement Zeebe Workers for Camunda Platform 8
 
   CI/CD
   aws-codebuild-workflow-ci [PREVIEW]                     Adds a AWS CodeBuild build specification to build a Micronaut application
@@ -38,19 +41,18 @@ Available Features
   microstream-cache                                       Adds support for using MicroStream as a cache
 
   Client
+  agorapulse-micronaut-slack [COMMUNITY]                  Micronaut Slack is idiomatic alternative to Bolt Micronaut library for Slack integration into the Micronaut Framework.
   coherence-session                                       Adds support for storing HTTP sessions in Coherence
-  http-client                                             Adds support for the Micronaut HTTP client
-  http-client-jdk                                         Adds support for the Micronaut HTTP client based on the Java HTTP Client
+  http-client (+)                                         Adds support for the Micronaut HTTP client
   http-session                                            Adds support for HTTP Sessions
   kubernetes-client                                       Adds official Kubernetes java client with Micronaut support
   kubernetes-reactor-client                               Adds Official Kubernetes Java Client with Reactor interface
   kubernetes-rxjava2-client                               Adds Official Kubernetes Java Client with RxJava2 interface
   netflix-ribbon                                          Adds support for client side load balancing using Netflix Ribbon
-  reactor-http-client                                     Version of the Http client which supports Project Reactor
-  rxjava2-http-client                                     RxJava 2 variation of the Micronaut HTTP client.
-  rxjava3-http-client                                     RxJava 3 variation of the Micronaut HTTP client.
 
   Cloud
+  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway REST API
+  amazon-api-gateway-http                                 This features combines with the CDK to define an API Gateway HTTP API
   arm                                                     It can be used in combination with 'aws-cdk' and aws-lambda to generate infrastructure for the Lambda CPU architecture
   aws-cdk                                                 Adds Amazon Web Services CDK (Cloud Development Kit) support
   aws-v2-sdk                                              Provides integration with the AWS SDK 2.x
@@ -74,9 +76,8 @@ Available Features
 
   Configuration
   config4k                                                Define configuration with config4k, a typesafe configuration format for Kotlin based on HOCON
-  properties (+)                                          Creates a properties configuration file
+  properties                                              Creates a properties configuration file
   toml                                                    Creates a TOML configuration file
-  yaml                                                    Adds support for using YAML for configuration
 
   Database
   azure-cosmos-db                                         Enables access to Azure Cosmos DB
@@ -125,9 +126,10 @@ Available Features
   vertx-pg-client                                         Add support for the Vertx Reactive PostgreSQL Client
 
   Development Tools
+  agorapulse-gru-http [COMMUNITY]                         Gru is HTTP interaction testing framework with out-of-box support for Micronaut
+  agorapulse-micronaut-console [COMMUNITY]                An extension to Micronaut applications and functions which allows executing arbitrary code.
   assertj                                                 AssertJ fluent assertions framework
   awaitility                                              Awaitility is a framework for testing asynchronous code
-  control-panel [PREVIEW]                                 The Micronaut Control Panel module provides a web UI that allows you to view and manage the state of your Micronaut application, typically in a development environment
   gradle-enterprise                                       Adds Gradle Enterprise Gradle plugin which enables integration with Gradle Enterprise and scans.gradle.com
   hamcrest                                                Hamcrest matchers for JUnit
   jrebel                                                  Adds support for class reloading with JRebel (requires separate JRebel installation)
@@ -137,8 +139,8 @@ Available Features
   micronaut-test-rest-assured                             A small Micronaut-Test utility module that helps integrate the REST-assured library
   microstream-rest                                        Adds the MicroStream REST API to your Micronaut project for development
   mockito                                                 Mockito test mocking framework for JUnit
-  object-storage-local                                    Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds a local implementation to save to a folder in your computer which you may want to use during testing and development.
   openrewrite                                             Adds OpenRewrite plugin and Micronaut upgrade recipe
+  springloaded                                            Adds support for class reloading with Spring Loaded
   test-resources                                          Adds support for managing external resources which are required during development or testing.
 
   Distributed Configuration
@@ -170,9 +172,7 @@ Available Features
   aws-alexa                                               Build Alexa Skills with Micronaut
 
   Languages
-  kapt                                                    Adds the Kapt compiler plugin for Kotlin, which includes support for Java annotation processors.
   kotlin-extension-functions                              Convenience functions to make using Micronaut with Kotlin more user-friendly
-  ksp [PREVIEW]                                           Adds support for processing source code at compilation time with Kotlin Symbol Processing (KSP).
 
   Logging
   log4j2                                                  Adds Log4j 2 Logging
@@ -220,7 +220,6 @@ Available Features
   kafka                                                   Adds support for Kafka messaging
   kafka-streams                                           Adds support for Kafka Streams
   mqtt                                                    Adds support for MQTT messaging
-  mqtt-hivemq                                             Adds support for MQTT HiveMQ
   mqttv3                                                  Adds support for MQTT messaging
   nats                                                    Adds support for Nats.io messaging
   rabbitmq                                                Adds support for RabbitMQ messaging
@@ -229,7 +228,7 @@ Available Features
   crac [PREVIEW]                                          Allows building an application that supports CRaC (Coordinated Restore at Checkpoint)
   graalvm                                                 Allows Building a GraalVM Native Image
   jib                                                     Build Docker containers using Jib
-  micronaut-aot (+)                                       Build time optimizations to provide faster startup times and smaller binaries.
+  micronaut-aot                                           Build time optimizations to provide faster startup times and smaller binaries.
   shade (+)                                               Adds the ability to build a Fat/Shaded JAR
 
   Reactive
@@ -244,10 +243,15 @@ Available Features
   SSL
   acme                                                    Adds support for ACME (Automated Certificate Management Environment)
 
+  Scheduling
+  agorapulse-micronaut-worker [COMMUNITY]                 Micronaut Worker library provides advanced distributed scheduling capabilities for Micronaut
+  jobrunr-jobrunr [COMMUNITY]                             Micronaut integration for JobRunr background processing in Java
+
   Search Engine
   elasticsearch                                           Adds support for Elasticsearch
 
   Security
+  agorapulse-micronaut-permissions [COMMUNITY]            Micronaut Permissions is a lightweight library to declare object level permissions in Micronaut
   amazon-cognito                                          Applies Micronaut Security OAuth 2.0 and provides configuration. Can be used in combination with 'aws-cdk' to generate a Cognito User Pool with a OAuth 2.0 application.
   security                                                Adds a full featured and customizable security solution
   security-jwt                                            Adds support for JWT (JSON Web Token) based Authentication
@@ -262,22 +266,16 @@ Available Features
   netty-server (+)                                        Adds support for a Netty server
   tomcat-server                                           Adds support for a Tomcat server
   undertow-server                                         Adds support for an Undertow server
-  websocket                                               Adds support for creating WebSocket clients and servers.
 
   Serverless
-  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway REST API
-  amazon-api-gateway-http                                 This features combines with the CDK to define an API Gateway HTTP API
   aws-lambda                                              Adds support for writing functions to deploy to AWS Lambda
   aws-lambda-custom-runtime                               Adds support for deploying a Micronaut Function to a Custom AWS Lambda Runtime
-  aws-lambda-events-serde                                 It adds support for Micronaut Serialization with AWS Lambda Java Events.
   azure-function                                          Adds support for writing functions to deploy to Microsoft Azure
   google-cloud-function                                   Adds support for writing functions to deploy to Google Cloud Function
   oracle-function                                         Adds support for writing functions to deploy to Oracle Cloud Function
 
   Service Discovery
-  discovery-client                                        Adds micronaut-discovery-client dependency which provides an implmentation of the DiscoveryClient API.
   discovery-consul                                        Adds support for Service Discovery with Consul
-  discovery-core                                          Adds micronaut-discovery-core dependency for base service discovery features.
   discovery-eureka                                        Adds support for Service Discovery with Eureka
   discovery-kubernetes                                    Adds support for Service Discovery with Kubernetes
 
@@ -290,9 +288,8 @@ Available Features
 
   Validation
   hibernate-validator                                     Adds support for the Hibernate Validator
-  micronaut-http-validation                               Adds support for validating route arguments at compile time
+  micronaut-validation                                    Adds support for Micronaut Validation
   problem-json                                            Produce REST API error responses in application/problem+json format
-  validation                                              Adds support for Micronaut Validation
 
   View Rendering
   jackson-xml                                             Adds support for using Jackson XML serialization/deserialization
