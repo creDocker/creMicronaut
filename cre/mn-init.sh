@@ -19,7 +19,7 @@ cd /cre/mn-create
 #postgres fails, but vertx-pg-client works
 ## flyway OR liquibase - not both
 mnFeatures=serialization-jsonp,kotlin-extension-functions,rss,views-thymeleaf,management
-mnFeatures=${mnFeatures},data-jdbc,jdbc-hikari,liquibase,vertx-pg-client,postgres
+mnFeatures=${mnFeatures},data-jdbc,jdbc-hikari,flyway,vertx-pg-client,postgres
 
 mnFeatures=${mnFeatures},yaml
 
