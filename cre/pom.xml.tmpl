@@ -101,14 +101,14 @@
           </exclusion>
         </exclusions>
     </dependency>
-{{ if 'liquibase' == $CurrentContainer.Env.DB_MIGRATION }}
+{{ if "liquibase" == $CurrentContainer.Env.DB_MIGRATION }}
     <!--dependency>
       <groupId>io.micronaut.liquibase</groupId>
       <artifactId>micronaut-liquibase</artifactId>
       <scope>compile</scope>
     </dependency-->
 {{ end }}
-{{ if eq 'flyway' $CurrentContainer.Env.DB_MIGRATION }}
+{{ if eq "flyway" $CurrentContainer.Env.DB_MIGRATION }}
     <dependency>
       <groupId>io.micronaut.flyway</groupId>
       <artifactId>micronaut-flyway</artifactId>
