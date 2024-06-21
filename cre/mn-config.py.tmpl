@@ -17,9 +17,9 @@ with open(configFile) as istream:
     ymldoc['micronaut']['application']['comment'] = 'mn-config.py was adapted!'
 
 {{ if eq "flyway" $CurrentContainer.Env.DB_MIGRATION }} 
-      # only needed if db already filled
-      ymldoc['flyway']['datasources']['default']['baseline-on-migrate'] = 'True'
-      ymldoc['flyway']['datasources']['default']['baseline-version'] = 0
+    # only needed if db already filled
+    ymldoc['flyway']['datasources']['default']['baseline-on-migrate'] = 'True'
+    ymldoc['flyway']['datasources']['default']['baseline-version'] = 0
 {{ end }}
 
     #add postgres data
