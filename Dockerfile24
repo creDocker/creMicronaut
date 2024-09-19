@@ -1,0 +1,97 @@
+# Adapted from 
+FROM credocker/creinstall:2024.0
+MAINTAINER Michael Kahle <michael.kahle@yahoo.de>
+
+ARG BUILD_YEAR=2024
+ARG BUILD_MONTH=0
+ARG BUILD_TAG=2024.0
+
+#ENV DEBIAN_FRONTEND noninteractive
+#ENV INITRD No
+#ENV LANG en_US.UTF-8
+
+##ENV MICRONAUT_VERSION 3.8.4
+ENV MICRONAUT_VERSION 3.10.1
+##ENV MICRONAUT_DATA_VERSION 3.9.6
+ENV MICRONAUT_DATA_VERSION 3.10.0
+# kotlin 1.6.10
+## ENV KOTLIN_VERSION 1.6.1
+ENV KOTLIN_VERSION 1.8.0
+ENV BUILD_SYSTEM maven
+ENV GRADLE_VERSION 7.6
+ENV POM_VERSION 4.0.0
+ENV MAVEN_VERSION 3.6.3
+
+LABEL Name="Micronaut for CRE" \
+      CRE=$CRE_VERSION \ 
+      Year=$BUILD_YEAR \
+      Month=$BUILD_MONTH \
+      Version=$MICRONAUT_VERSION \
+      OS="Ubuntu:$UBUNTU_VERSION" \
+      Build_=$BUILD_TAG 
+
+
+#RUN /cre/sdk.sh version
+
+# Install corresponding java family and version
+#RUN /cre/sdk-java.sh $JAVA_FAMILY $JAVA_VERSION
+RUN /cre/sdk-java.sh
+ENV JAVA_HOME "$SDKMAN_DIR/candidates/java/current/"
+
+# Install kotlin, gradle, maven, micronaut 
+#RUN /cre/sdk.sh install kotlin
+RUN /cre/sdk.sh install kotlin $KOTLIN_VERSION
+RUN /cre/sdk.sh install gradle
+RUN /cre/sdk.sh install maven
+#RUN /cre/sdk.sh install micronaut 
+RUN /cre/sdk.sh install micronaut $MICRONAUT_VERSION
+##RUN /bin/bash -c "source $SDKMAN_DIR/bin/sdkman-init.sh; sdk install kotlin"
+
+# RUN /cre/sdk.sh list kotlin
+# RUN /cre/sdk.sh list micronaut
+
+COPY cre /cre
+WORKDIR "/cre/mn-app"
+
+RUN ls -l /cre/mn-app
+
+## /cre/micronaut.sh create-app --list-features
+# serialization-jsonp 
+# liquibase postgres
+# kotlin-extension-functions
+# email-javamail  ??
+# rabbitmq
+# (graalvm)
+# Security:
+# rss views-thymeleaf
+
+# netflix-hystrix
+# postgres fails
+
+## https://guides.micronaut.io/latest/creating-your-first-micronaut-app-maven-kotlin.html
+## build once to hopefully download packages.
+# flyway OR liquibase
+RUN cd /cre/mn-create && \ 
+ /cre/micronaut.sh create-app cre.micronaut.app --build=maven --lang=kotlin \
+  --features=rabbitmq,rss,views-thymeleaf,management,serialization-jsonp,kotlin-extension-functions,email-javamail,flyway,data-jdbc,jdbc-hikari,vertx-pg-client && \ 
+ cd /cre/mn-create/app && ./mvnw package
+## ./mvnw mn:run
+## ./gradlew run
+
+RUN rm -R /cre/mn-create/app
+
+RUN ls -l /cre/mn-app
+
+
+#https://stackoverflow.com/questions/62188599/cannot-build-dockerfile-with-sdkman
+
+RUN mkdir -p /cre && touch /cre/versions.txt && \ 
+    echo "$(date +'%F %R') \t creMicronaut \t ${MICRONAUT_VERSION}" >> /cre/versions.txt && \
+    echo "$(date +'%F %R') \t  $(ls /root/.m2/wrapper/dists/ | grep 'apache-maven')" >> /cre/versions.txt && \ 
+    echo "$(date +'%F %R') \t  $(/cre/micronaut.sh --version)" >> /cre/versions.txt
+ 
+EXPOSE 8080 
+
+ENTRYPOINT ["/cre/micronaut-entrypoint.sh"]
+
+CMD ["shoreman", "/cre/micronaut-procfile"]
