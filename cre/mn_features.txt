@@ -3,23 +3,19 @@ Available Features
   Name                                                    Description
   ------------------------------------------------------  ---------------
   API
-  annotation-api                                          Adds Jakarta annotations API dependency. For example, to use @PostConstruct or @PreDestroy
   graphql                                                 Adds support for GraphQL
-  jackson-databind                                        Adds Jackson Databind to a Micronaut Application
-  json-schema                                             Adds JSON Schema to a Micronaut Application
-  json-schema-validation                                  Adds JSON Schema Validation to a Micronaut Application
+  jackson-databind (+)                                    Adds Jackson Databind to a Micronaut Application
   micronaut-aop                                           Adds support for Micronaut Aspect-Oriented Programming (AOP) API
   openapi                                                 Adds support for OpenAPI (Swagger)
-  openapi-adoc                                            Adds and enables document conversion to AsciiDoc
-  openapi-explorer                                        Adds and enables OpenAPI Explorer view for OpenAPI
-  rapidoc                                                 Adds and enables RapiDoc view for OpenAPI
-  redoc                                                   Adds and enables Redoc view for OpenAPI
-  retry                                                   Adds support for fallbacks or retries from operation failure.
   serialization-bson                                      Adds support using Micronaut Serialization with BSON
-  serialization-jackson (+)                               Adds support using Micronaut Serialization with Jackson Core
+  serialization-jackson                                   Adds support using Micronaut Serialization with Jackson Core
   serialization-jsonp                                     Adds support using Micronaut Serialization with JSON-B and JSON-P
-  sourcegen-generator                                     Micronaut SourceGen exposes a language-neutral API for source code generation
   swagger-ui                                              Adds and enables Swagger UI by default
+
+  BPM
+  camunda-external-worker [COMMUNITY]                     Bringing process automation to Micronaut: Implement Camunda External Workers for the Camunda Platform 7
+  camunda-platform7 [COMMUNITY]                           Bringing process automation to Micronaut: Embed the Camunda Platform 7 Workflow Engine
+  camunda-zeebe [COMMUNITY]                               Bringing cloud native process automation to Micronaut: Implement Zeebe Workers for Camunda Platform 8
 
   CI/CD
   aws-codebuild-workflow-ci [PREVIEW]                     Adds a AWS CodeBuild build specification to build a Micronaut application
@@ -34,7 +30,7 @@ Available Features
   github-workflow-oracle-cloud-functions-graalvm [PREVIEW]Adds a GitHub Actions Workflow to deploy a GraalVM native image to Oracle Functions from Oracle Cloud Infrastructure Registry
   gitlab-workflow-ci [PREVIEW]                            Adds a Gitlab CI Workflow to build a Micronaut application
   google-cloud-workflow-ci [PREVIEW]                      Adds a Google Cloud Build configuration file to build a Micronaut application
-  oracle-cloud-devops-build-ci                            Adds a Oracle Cloud DevOps Build Workflow to build a Micronaut application
+  oci-devops-build-ci [PREVIEW]                           Adds a Oracle Cloud DevOps Build Workflow to build a Micronaut application
 
   Cache
   cache-caffeine                                          Adds support for caching using Caffeine
@@ -44,24 +40,19 @@ Available Features
   cache-infinispan                                        Adds support for caching using Infinispan
   microstream-cache                                       Adds support for using MicroStream as a cache
 
-  ChatBots
-  chatbots-basecamp-http                                  Generates an application that implements a Basecamp chatbot controller
-  chatbots-telegram-http                                  Generates an application that implements a Telegram chatbot controller
-
   Client
+  agorapulse-micronaut-slack [COMMUNITY]                  Micronaut Slack is idiomatic alternative to Bolt Micronaut library for Slack integration into the Micronaut Framework.
   coherence-session                                       Adds support for storing HTTP sessions in Coherence
-  http-client                                             Adds support for the Micronaut HTTP client
-  http-client-jdk                                         Adds support for the Micronaut HTTP client based on the Java HTTP Client
+  http-client (+)                                         Adds support for the Micronaut HTTP client
   http-session                                            Adds support for HTTP Sessions
   kubernetes-client                                       Adds official Kubernetes java client with Micronaut support
   kubernetes-reactor-client                               Adds Official Kubernetes Java Client with Reactor interface
   kubernetes-rxjava2-client                               Adds Official Kubernetes Java Client with RxJava2 interface
   netflix-ribbon                                          Adds support for client side load balancing using Netflix Ribbon
-  reactor-http-client                                     Version of the Http client which supports Project Reactor
-  rxjava2-http-client                                     RxJava 2 variation of the Micronaut HTTP client.
-  rxjava3-http-client                                     RxJava 3 variation of the Micronaut HTTP client.
 
   Cloud
+  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway REST API
+  amazon-api-gateway-http                                 This features combines with the CDK to define an API Gateway HTTP API
   arm                                                     It can be used in combination with 'aws-cdk' and aws-lambda to generate infrastructure for the Lambda CPU architecture
   aws-cdk                                                 Adds Amazon Web Services CDK (Cloud Development Kit) support
   aws-v2-sdk                                              Provides integration with the AWS SDK 2.x
@@ -80,15 +71,13 @@ Available Features
   object-storage-gcp                                      Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds the GCP implementation
   object-storage-oracle-cloud                             Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds the Oracle Cloud implementation
   oracle-cloud-atp                                        Provides integration with Oracle Cloud Autonomous Database
-  oracle-cloud-httpclient-netty                           Provides the netty micronaut client for oraclecloud
   oracle-cloud-sdk                                        Provides integration with the Oracle Cloud SDK
   x86                                                     It can be used in combination with 'aws-cdk' and aws-lambda to generate infrastructure for the Lambda CPU architecture
 
   Configuration
   config4k                                                Define configuration with config4k, a typesafe configuration format for Kotlin based on HOCON
-  properties (+)                                          Creates a properties configuration file
+  properties                                              Creates a properties configuration file
   toml                                                    Creates a TOML configuration file
-  yaml                                                    Adds support for using YAML for configuration
 
   Database
   azure-cosmos-db                                         Enables access to Azure Cosmos DB
@@ -103,13 +92,11 @@ Available Features
   data-mongodb                                            Adds support for defining synchronous data repositories for MongoDB
   data-mongodb-reactive                                   Adds support for defining reactive data repositories for MongoDB
   data-r2dbc                                              Micronaut Data support for Reactive Database Connectivity (R2DBC)
-  data-spring-jdbc                                        Adds support for Micronaut Data Spring JDBC
   dynamodb                                                Integrates with Amazon DynamoDB a NoSQL database service
-  eclipsestore                                            Adds support for using EclipseStore with Micronaut
   flyway                                                  Adds support for Flyway database migrations
   h2                                                      Adds the H2 driver and default config
+  hibernate-gorm [PREVIEW]                                Adds support for Hibernate using GORM
   hibernate-jpa                                           Adds support for Hibernate/JPA
-  hibernate-jpamodelgen                                   Generator for compile time static metamodel classes
   hibernate-reactive-jpa                                  Adds support for Hibernate Reactive/JPA
   jasync-sql                                              Adds support for JAsync asynchronous PostgreSQL and MySQL database drivers
   jdbc-dbcp                                               Configures SQL DataSources using Commons DBCP
@@ -120,11 +107,14 @@ Available Features
   liquibase                                               Adds support for Liquibase database migrations
   mariadb                                                 Adds the MariaDB driver and default config
   microstream                                             Adds support for using MicroStream with Micronaut
+  mongo-gorm [PREVIEW]                                    Configures GORM for MongoDB for Groovy applications
   mongo-reactive                                          Adds support for the MongoDB Reactive Streams Driver
   mongo-sync                                              Adds support for the MongoDB Synchronous Driver
   multi-tenancy                                           Adds multitenancy (tenant resolution, tenant propagation) capabilities
+  multi-tenancy-gorm [PREVIEW]                            Integrates Micronaut multitenancy capabilities with GORM multitenancy features
   mysql                                                   Adds the MySQL driver and default config
   neo4j-bolt                                              Adds support for the Neo4j Bolt Driver
+  neo4j-gorm [PREVIEW]                                    Configures GORM for Neo4j for Groovy applications
   oracle                                                  Adds the Oracle driver and default config
   postgres                                                Adds the PostgresSQL driver and default config
   r2dbc                                                   R2DBC - Reactive Database Connectivity
@@ -135,15 +125,11 @@ Available Features
   vertx-mysql-client                                      Add support for the Vertx Reactive MySQL Client
   vertx-pg-client                                         Add support for the Vertx Reactive PostgreSQL Client
 
-  Dependency Injection
-  guice                                                   Micronaut Guice allows importing Guice modules into a Micronaut application, making the Guice bindings available for Dependency Injection.
-
   Development Tools
+  agorapulse-gru-http [COMMUNITY]                         Gru is HTTP interaction testing framework with out-of-box support for Micronaut
+  agorapulse-micronaut-console [COMMUNITY]                An extension to Micronaut applications and functions which allows executing arbitrary code.
   assertj                                                 AssertJ fluent assertions framework
   awaitility                                              Awaitility is a framework for testing asynchronous code
-  buildless [COMMUNITY]                                   Lightning-fast build caching CDN, compatible with Gradle, Maven, Bazel, and Gradle Enterprise.
-  control-panel [PREVIEW]                                 The Micronaut Control Panel module provides a web UI that allows you to view and manage the state of your Micronaut application, typically in a development environment
-  eclipsestore-rest                                       Adds the EclipseStore REST API to your Micronaut project for development
   gradle-enterprise                                       Adds Gradle Enterprise Gradle plugin which enables integration with Gradle Enterprise and scans.gradle.com
   hamcrest                                                Hamcrest matchers for JUnit
   jrebel                                                  Adds support for class reloading with JRebel (requires separate JRebel installation)
@@ -153,9 +139,8 @@ Available Features
   micronaut-test-rest-assured                             A small Micronaut-Test utility module that helps integrate the REST-assured library
   microstream-rest                                        Adds the MicroStream REST API to your Micronaut project for development
   mockito                                                 Mockito test mocking framework for JUnit
-  mockserver-client-java                                  Provides capability to connect to a MockServer
-  object-storage-local                                    Micronaut Object Storage provides a uniform API to create, read and delete objects in the major cloud providers. This feature adds a local implementation to save to a folder in your computer which you may want to use during testing and development.
-  openrewrite                                             Adds OpenRewrite plugin and Micronaut3to4Migration migration recipe
+  openrewrite                                             Adds OpenRewrite plugin and Micronaut upgrade recipe
+  springloaded                                            Adds support for class reloading with Spring Loaded
   test-resources                                          Adds support for managing external resources which are required during development or testing.
 
   Distributed Configuration
@@ -183,39 +168,41 @@ Available Features
   Documentation
   asciidoctor                                             Adds support for creating Asciidoctor documentation
 
-  Groovy Optional Modules
-  groovy-datetime                                         Extensions for working with the JSR 310 Date/Time API introduced in Java 8.
-  groovy-dateutil                                         Extensions for working with Java’s classic Date and Calendar classes.
-  groovy-ginq                                             Extensions for queries against in-memory collections of objects in SQL-like style.
-  groovy-json                                             Extensions for JSON serialization and parsing.
-  groovy-sql                                              Extensions that provide a higher-level abstraction over Java’s JDBC technology.
-  groovy-toml                                             Extensions for processing Groovy objects with TOML.
-  groovy-xml                                              Extensions for processing XML with Groovy.
-  groovy-yaml                                             Extensions for processing Groovy objects with YAML.
-
   Internet of Things
   aws-alexa                                               Build Alexa Skills with Micronaut
 
   Languages
-  kapt                                                    Adds the Kapt compiler plugin for Kotlin, which includes support for Java annotation processors.
   kotlin-extension-functions                              Convenience functions to make using Micronaut with Kotlin more user-friendly
-  ksp [PREVIEW]                                           Adds support for processing source code at compilation time with Kotlin Symbol Processing (KSP).
 
   Logging
-  amazon-cloudwatch-logging                               Provides integration with Amazon CloudWatch Logs
-  azure-logging                                           Provides integration with Azure Monitor Logs
-  gcp-logging                                             Provides integration with Google Cloud Logging
-  jul-to-slf4j                                            Java Util Logging bridge for SLF4J with Logback.
   log4j2                                                  Adds Log4j 2 Logging
   logback (+)                                             Adds Logback Logging
-  oracle-cloud-logging                                    Provides integration with the Oracle Cloud Logging service
   slf4j-simple                                            Adds SLF4J Simple Logging through simplelogger.properties
-  slf4j-simple-logger                                     Logger for applications in single-thread contexts.
 
   Management
   jmx                                                     Adds support for exposing management endpoints over JMX
   management                                              Adds support for management endpoints
   micrometer-annotation                                   Adds support for Micrometer annotations (@Timed and @Counted)
+  micrometer-appoptics                                    Adds support for Micrometer metrics (w/ AppOptics reporter)
+  micrometer-atlas                                        Adds support for Micrometer metrics (w/ Atlas reporter)
+  micrometer-azure-monitor                                Adds support for Micrometer metrics (w/ Azure Monitor reporter)
+  micrometer-cloudwatch                                   Adds support for Micrometer metrics (w/ AWS Cloudwatch reporter)
+  micrometer-datadog                                      Adds support for Micrometer metrics (w/ Datadog reporter)
+  micrometer-dynatrace                                    Adds support for Micrometer metrics (w/ Dynatrace reporter)
+  micrometer-elastic                                      Adds support for Micrometer metrics (w/ Elastic reporter)
+  micrometer-ganglia                                      Adds support for Micrometer metrics (w/ Ganglia reporter)
+  micrometer-graphite                                     Adds support for Micrometer metrics (w/ Graphite reporter)
+  micrometer-humio                                        Adds support for Micrometer metrics (w/ Humio reporter)
+  micrometer-influx                                       Adds support for Micrometer metrics (w/ Influx reporter)
+  micrometer-jmx                                          Adds support for Micrometer metrics (w/ JMX reporter)
+  micrometer-kairos                                       Adds support for Micrometer metrics (w/ Kairos reporter)
+  micrometer-new-relic                                    Adds support for Micrometer metrics (w/ New Relic reporter)
+  micrometer-oracle-cloud                                 Adds support for Micrometer metrics (w/ Oracle Cloud reporter)
+  micrometer-prometheus                                   Adds support for Micrometer metrics (w/ Prometheus reporter)
+  micrometer-signalfx                                     Adds support for Micrometer metrics (w/ SignalFx reporter)
+  micrometer-stackdriver                                  Adds support for Micrometer metrics (w/ Stackdriver reporter)
+  micrometer-statsd                                       Adds support for Micrometer metrics (w/ Statsd reporter)
+  micrometer-wavefront                                    Adds support for Micrometer metrics (w/ Wavefront reporter)
 
   Messaging
   email-amazon-ses                                        Integration with Amazon Simple Email Service to send transactional emails
@@ -233,40 +220,15 @@ Available Features
   kafka                                                   Adds support for Kafka messaging
   kafka-streams                                           Adds support for Kafka Streams
   mqtt                                                    Adds support for MQTT messaging
-  mqtt-hivemq                                             Adds support for MQTT HiveMQ
   mqttv3                                                  Adds support for MQTT messaging
   nats                                                    Adds support for Nats.io messaging
   rabbitmq                                                Adds support for RabbitMQ messaging
-
-  Metrics
-  micrometer-appoptics                                    Adds support for Micrometer metrics (w/ AppOptics reporter)
-  micrometer-atlas                                        Adds support for Micrometer metrics (w/ Atlas reporter)
-  micrometer-azure-monitor                                Adds support for Micrometer metrics (w/ Azure Monitor reporter)
-  micrometer-cloudwatch                                   Adds support for Micrometer metrics (w/ AWS Cloudwatch reporter)
-  micrometer-datadog                                      Adds support for Micrometer metrics (w/ Datadog reporter)
-  micrometer-dynatrace                                    Adds support for Micrometer metrics (w/ Dynatrace reporter)
-  micrometer-elastic                                      Adds support for Micrometer metrics (w/ Elastic reporter)
-  micrometer-ganglia                                      Adds support for Micrometer metrics (w/ Ganglia reporter)
-  micrometer-graphite                                     Adds support for Micrometer metrics (w/ Graphite reporter)
-  micrometer-humio                                        Adds support for Micrometer metrics (w/ Humio reporter)
-  micrometer-influx                                       Adds support for Micrometer metrics (w/ Influx reporter)
-  micrometer-jmx                                          Adds support for Micrometer metrics (w/ JMX reporter)
-  micrometer-kairos                                       Adds support for Micrometer metrics (w/ Kairos reporter)
-  micrometer-new-relic                                    Adds support for Micrometer metrics (w/ New Relic reporter)
-  micrometer-observation                                  Simplifies code instrumentation for gathering traces and metrics
-  micrometer-observation-http                             Automates code instrumentation for Micronaut HTTP server and Micronaut HTTP clients
-  micrometer-oracle-cloud                                 Adds support for Micrometer metrics (w/ Oracle Cloud reporter)
-  micrometer-prometheus                                   Adds support for Micrometer metrics (w/ Prometheus reporter)
-  micrometer-signalfx                                     Adds support for Micrometer metrics (w/ SignalFx reporter)
-  micrometer-stackdriver                                  Adds support for Micrometer metrics (w/ Stackdriver reporter)
-  micrometer-statsd                                       Adds support for Micrometer metrics (w/ Statsd reporter)
-  micrometer-wavefront                                    Adds support for Micrometer metrics (w/ Wavefront reporter)
 
   Packaging
   crac [PREVIEW]                                          Allows building an application that supports CRaC (Coordinated Restore at Checkpoint)
   graalvm                                                 Allows Building a GraalVM Native Image
   jib                                                     Build Docker containers using Jib
-  micronaut-aot (+)                                       Build time optimizations to provide faster startup times and smaller binaries.
+  micronaut-aot                                           Build time optimizations to provide faster startup times and smaller binaries.
   shade (+)                                               Adds the ability to build a Fat/Shaded JAR
 
   Reactive
@@ -282,15 +244,14 @@ Available Features
   acme                                                    Adds support for ACME (Automated Certificate Management Environment)
 
   Scheduling
+  agorapulse-micronaut-worker [COMMUNITY]                 Micronaut Worker library provides advanced distributed scheduling capabilities for Micronaut
   jobrunr-jobrunr [COMMUNITY]                             Micronaut integration for JobRunr background processing in Java
 
   Search Engine
   elasticsearch                                           Adds support for Elasticsearch
-  opensearch-amazon                                       Adds support for Amazon OpenSearch Service
-  opensearch-httpclient5                                  Adds support for OpenSearch using Apache HttpClient 5 Transport
-  opensearch-restclient                                   Adds support for OpenSearch RestClient-based transport
 
   Security
+  agorapulse-micronaut-permissions [COMMUNITY]            Micronaut Permissions is a lightweight library to declare object level permissions in Micronaut
   amazon-cognito                                          Applies Micronaut Security OAuth 2.0 and provides configuration. Can be used in combination with 'aws-cdk' to generate a Cognito User Pool with a OAuth 2.0 application.
   security                                                Adds a full featured and customizable security solution
   security-jwt                                            Adds support for JWT (JSON Web Token) based Authentication
@@ -305,22 +266,16 @@ Available Features
   netty-server (+)                                        Adds support for a Netty server
   tomcat-server                                           Adds support for a Tomcat server
   undertow-server                                         Adds support for an Undertow server
-  websocket                                               Adds support for creating WebSocket clients and servers.
 
   Serverless
-  amazon-api-gateway                                      This features combines with the CDK to define an API Gateway REST API
-  amazon-api-gateway-http                                 This features combines with the CDK to define an API Gateway HTTP API
   aws-lambda                                              Adds support for writing functions to deploy to AWS Lambda
   aws-lambda-custom-runtime                               Adds support for deploying a Micronaut Function to a Custom AWS Lambda Runtime
-  aws-lambda-events-serde                                 It adds support for Micronaut Serialization with AWS Lambda Java Events.
   azure-function                                          Adds support for writing functions to deploy to Microsoft Azure
   google-cloud-function                                   Adds support for writing functions to deploy to Google Cloud Function
   oracle-function                                         Adds support for writing functions to deploy to Oracle Cloud Function
 
   Service Discovery
-  discovery-client                                        Adds micronaut-discovery-client dependency which provides an implmentation of the DiscoveryClient API.
   discovery-consul                                        Adds support for Service Discovery with Consul
-  discovery-core                                          Adds micronaut-discovery-core dependency for base service discovery features.
   discovery-eureka                                        Adds support for Service Discovery with Eureka
   discovery-kubernetes                                    Adds support for Service Discovery with Kubernetes
 
@@ -331,27 +286,19 @@ Available Features
   spring-data-jpa                                         Adds support for using Spring Data JPA Annotations
   spring-web                                              Adds support for using Spring MVC Controller Annotations
 
-  Testing
-  json-path                                               Jayway JsonPath provides a Java DSL for reading JSON documents
-  json-smart                                              Json-smart is a performance focused, JSON processor library
-  junit-platform-suite-engine                             Adds the junit-platform-suite-engine dependency, an implementation of the TestEngine API for declarative test suites.
-
   Validation
   hibernate-validator                                     Adds support for the Hibernate Validator
-  micronaut-http-validation (+)                           Adds support for validating route arguments at compile time
+  micronaut-validation                                    Adds support for Micronaut Validation
   problem-json                                            Produce REST API error responses in application/problem+json format
-  validation                                              Adds support for Micronaut Validation
 
   View Rendering
   jackson-xml                                             Adds support for using Jackson XML serialization/deserialization
   rss                                                     Adds support for generating RSS feeds
   rss-itunes-podcast                                      Adds support for generating iTunes Podcast RSS feeds
-  views-fieldset                                          Adds the views-fieldset dependency, which provides an API to simplify the generation of an HTML Fieldset representation for a given type or instance.
   views-freemarker                                        Adds support for Server-Side View Rendering using Apache Freemarker
   views-handlebars                                        Adds support for Server-Side View Rendering using Handlebars
   views-jte                                               Adds support for Server-Side View Rendering using JTE
   views-pebble                                            Adds support for Server-Side View Rendering using Pebble
-  views-react [PREVIEW]                                   Adds support for Server-Side View Rendering of ReactJS components using the GraalJS engine.
   views-rocker                                            Adds support for Server-Side View Rendering using Rocker
   views-soy                                               Adds support for Server-Side View Rendering using Soy (Closure Templates)
   views-thymeleaf                                         Adds support for Server-Side View Rendering using Thymeleaf
